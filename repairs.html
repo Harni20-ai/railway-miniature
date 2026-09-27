@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}
+  /* Text vibrancy overrides */
+  html.dark .text-primary { color: #ffb2bc !important; }
+  html.dark .hover\:text-primary:hover { color: #ffd9dd !important; }
+  html.dark .text-secondary { color: #baeed9 !important; }
+  html.dark .hover\:text-secondary:hover { color: #ffffff !important; }
+
+  /* Tertiary / Brown Text vibrancy overrides */
+  html.dark .text-tertiary { color: #ffdea5 !important; }
+  html.dark .text-tertiary-container { color: #ffdea5 !important; }
+  html.dark .text-on-tertiary-container { color: #ffe6bd !important; }
+  html.dark .text-tertiary-fixed { color: #ffdea5 !important; }
+  html.dark .text-on-tertiary-fixed { color: #261900 !important; }
+  html.dark .bg-tertiary-fixed { background-color: #ffdea5 !important; }
+  html.dark .bg-tertiary-fixed-dim { background-color: #e9c176 !important; }
+
+  /* Secondary Fixed text visibility override */
+  html.dark .text-secondary-fixed { color: #ffffff !important; font-weight: 600 !important; }
+
+  /* Gradient overrides for Surface (Fixes white washout gap at bottom of hero images) */
+  html.dark .from-surface {
+      --tw-gradient-from: #121212 var(--tw-gradient-from-position) !important;
+      --tw-gradient-to: rgba(18, 18, 18, 0) var(--tw-gradient-to-position) !important;
+      --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+  }
+  html.dark .via-surface\/60 {
+      --tw-gradient-to: rgba(18, 18, 18, 0)  var(--tw-gradient-to-position) !important;
+      --tw-gradient-stops: var(--tw-gradient-from), rgba(18, 18, 18, 0.6) var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+  }
+
+  /* Fix contrast for text-primary when used inside bg-primary-fixed */
+  html.dark .bg-primary-fixed.text-primary,
+  html.dark .bg-primary-fixed .text-primary {
+      color: #400013 !important; 
+  }
+</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">  tailwind.config = {    darkMode: "class",    theme: {      extend: {        "colors": {          "on-secondary-container": "#3d6d5d",          "on-primary-fixed": "#400013",          "on-secondary": "#ffffff",          "on-primary-container": "#ee8495",          "primary-container": "#6b1d2f",          "on-error": "#ffffff",          "tertiary": "#322200",          "on-error-container": "#93000a",          "on-tertiary-fixed-variant": "#5d4201",          "surface-container": "#efeeeb",          "surface-container-highest": "#e4e2df",          "tertiary-container": "#4d3600",          "surface-container-low": "#f5f3f0",          "on-surface-variant": "#544244",          "on-secondary-fixed-variant": "#1d4f40",          "surface-bright": "#fbf9f6",          "error-container": "#ffdad6",          "on-tertiary": "#ffffff",          "secondary": "#376757",          "surface-container-high": "#eae8e5",          "surface": "#fbf9f6",          "inverse-on-surface": "#f2f0ed",          "primary-fixed-dim": "#ffb2bc",          "inverse-primary": "#ffb2bc",          "primary-fixed": "#ffd9dd",          "background": "#fbf9f6",          "secondary-fixed": "#baeed9",          "secondary-fixed-dim": "#9ed1bd",          "primary": "#4e051a",          "on-primary": "#ffffff",          "on-surface": "#1b1c1a",          "outline": "#877274",          "error": "#ba1a1a",          "on-primary-fixed-variant": "#7c2a3b",          "inverse-surface": "#30312f",          "on-tertiary-fixed": "#261900",          "surface-dim": "#dbdad7",          "on-secondary-fixed": "#002117",          "tertiary-fixed": "#ffdea5",          "surface-variant": "#e4e2df",          "on-tertiary-container": "#c39f58",          "outline-variant": "#dac0c2",          "surface-tint": "#9a4152",          "tertiary-fixed-dim": "#e9c176",          "surface-container-lowest": "#ffffff",          "secondary-container": "#baeed9",          "on-background": "#1b1c1a"        },        "borderRadius": {          "DEFAULT": "0.125rem",          "lg": "0.25rem",          "xl": "0.5rem",          "full": "0.75rem"        },        "spacing": {          "gutter": "1.5rem",          "space-md": "1rem",          "space-lg": "1.5rem",          "space-xl": "3rem",          "margin": "2rem",          "space-xs": "0.25rem",          "space-sm": "0.5rem"        },        "fontFamily": {          "body-sm": ["Inter"],          "label-md": ["Inter"],          "headline-xl": ["Playfair Display"],          "headline-md": ["Playfair Display"],          "label-sm": ["Inter"],          "headline-sm": ["Playfair Display"],          "headline-lg": ["Playfair Display"],          "body-md": ["Inter"],          "body-lg": ["Inter"]        },        "fontSize": {          "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }],          "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],          "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],          "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],          "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "500" }],          "headline-sm": ["22px", { "lineHeight": "28px", "fontWeight": "500" }],          "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600" }],          "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],          "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]        }      }    }  }</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Playfair+Display:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style id="dark-mode-overrides">
+  /* Dark mode overrides for semantic colors */
+  html.dark .bg-surface-container-lowest { background-color: #0a0a0a !important; }
+  html.dark .bg-surface { background-color: #121212 !important; }
+  html.dark .bg-surface-container-low { background-color: #1a1a1a !important; }
+  html.dark .bg-surface-container { background-color: #212121 !important; }
+  html.dark .bg-surface-container-high { background-color: #2b2b2b !important; }
+  html.dark .bg-surface-container-highest { background-color: #333333 !important; }
+  
+  html.dark .bg-background { background-color: #121212 !important; }
+  html.dark .text-on-background { color: #e3e3e3 !important; }
+
+  html.dark .text-on-surface { color: #e3e3e3 !important; }
+  html.dark .text-on-surface-variant { color: #c4c4c4 !important; }
+  html.dark .text-outline { color: #999999 !important; }
+  
+  html.dark .bg-outline { background-color: #737373 !important; }
+  html.dark .bg-outline-variant { background-color: #444444 !important; }
+  
+  html.dark .border-outline { border-color: #737373 !important; }
+  html.dark .border-outline-variant { border-color: #444444 !important; }
+  
+  /* Gradient overrides for Hero sections */
+  html.dark .from-background\/95 {
+      --tw-gradient-from: rgba(18, 18, 18, 0.95) var(--tw-gradient-from-position) !important;
+      --tw-gradient-to: rgba(18, 18, 18, 0) var(--tw-gradient-to-position) !important;
+      --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+  }
+  html.dark .via-background\/70 {
+      --tw-gradient-to: rgba(18, 18, 18, 0)  var(--tw-gradient-to-position) !important;
+      --tw-gradient-stops: var(--tw-gradient-from), rgba(18, 18, 18, 0.7) var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+  }
+
+  /* Opacity variations */
+  html.dark .bg-surface\/10 { background-color: rgba(18, 18, 18, 0.1) !important; }
+  html.dark .bg-surface\/80 { background-color: rgba(18, 18, 18, 0.8) !important; }
+  html.dark .bg-surface\/90 { background-color: rgba(18, 18, 18, 0.9) !important; }
+  html.dark .bg-surface-container-high\/80 { background-color: rgba(43, 43, 43, 0.8) !important; }
+  html.dark .bg-surface-container-high\/90 { background-color: rgba(43, 43, 43, 0.9) !important; }
+  html.dark .bg-surface-container\/20 { background-color: rgba(33, 33, 33, 0.2) !important; }
+
+  html.dark .border-outline-variant\/20 { border-color: rgba(68, 68, 68, 0.2) !important; }
+  html.dark .border-outline-variant\/30 { border-color: rgba(68, 68, 68, 0.3) !important; }
+  html.dark .border-outline-variant\/40 { border-color: rgba(68, 68, 68, 0.4) !important; }
+
+  /* Hover states */
+  html.dark .hover\:bg-surface-container-high:hover { background-color: #333333 !important; }
+  html.dark .hover\:text-on-surface:hover { color: #ffffff !important; }
+  html.dark .group:hover .group-hover\:text-on-surface { color: #ffffff !important; }
+  
+  /* Input fields */
+  html.dark input.bg-surface-container-low { background-color: #212121 !important; color: #ffffff !important; }
+  html.dark textarea.bg-surface-container-low { background-color: #212121 !important; color: #ffffff !important; }
+  html.dark select.bg-surface-container-low { background-color: #212121 !important; color: #ffffff !important; }
+</style>
+</head><body class="bg-surface font-body-md text-on-surface"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-7xl mx-auto px-gutter flex items-center justify-between"><div class="flex items-center gap-space-md"><img alt="Iron &amp; Gauge Atelier Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3qEV6vnr8VlZfLl05S--QeurcSKvtHop_ZtVJgPxYmv9ODu_39fPUUwJBshP_ZH9wAVJpwVhXxXh2DrS0zOkC81LT0eOYEjP_t2UEHWgjnOs9Y7bs3I4fI2itfPBy5pTHQPh0x9GFBpqBwgjJtHpNBAcxrLDCuI34VpF9S1hlPszwLWubdLq5JKZujG4FnrT55sDw9o5LFLNB2HpIEYbZVq7LWIPKm3s4wcr5n258cyRLnMcc7NL_HA"/><span class="text-headline-sm font-headline-sm tracking-tight text-on-surface">Iron &amp; Gauge Atelier</span></div><nav class="hidden lg:flex items-center gap-space-lg">
+<div class="relative flex items-center h-full">
+  <button id="home-menu-btn" class="transition-colors text-body-md text-on-surface-variant hover:text-on-surface flex items-center gap-1 font-bold py-4">Home <span class="material-symbols-outlined text-[16px]">expand_more</span></button>
+  <div id="home-menu" class="absolute left-0 top-full w-40 bg-surface shadow-lg rounded-lg overflow-hidden hidden z-50 border border-outline-variant">
+    <a href="index.html" class="block px-4 py-2 text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface cursor-pointer">Home 1</a>
+    <a href="home2.html" class="block px-4 py-2 text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface cursor-pointer">Home 2</a>
+  </div>
+</div>
+<a class="text-body-md text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer" href="products.html">Products</a>
+<a class="text-body-md text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer" href="custom-layouts.html">Custom Layouts</a>
+<a class="text-body-md text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer" href="repairs.html">Repairs</a>
+<a class="text-body-md text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer" href="contact.html">Contact</a>
+</nav><div class="flex items-center gap-space-md"><button class="p-space-xs rounded-full hover:bg-surface-container-high hover:text-on-surface transition-colors text-on-surface-variant" id="search-btn"><span class="material-symbols-outlined text-[20px]">search</span></button><button class="relative p-space-xs rounded-full hover:bg-surface-container-high hover:text-on-surface transition-colors text-on-surface-variant" id="wishlist-btn"><span class="material-symbols-outlined text-[20px]">favorite</span><span class="absolute -top-1 -right-1 bg-primary text-on-primary text-label-sm w-4 h-4 rounded-full flex items-center justify-center">3</span></button><button class="relative p-space-xs rounded-full hover:bg-surface-container-high hover:text-on-surface transition-colors text-on-surface-variant" id="cart-btn"><span class="material-symbols-outlined text-[20px]">shopping_bag</span><span class="absolute -top-1 -right-1 bg-primary text-on-primary text-label-sm w-4 h-4 rounded-full flex items-center justify-center">2</span></button><button class="p-space-xs rounded-full hover:bg-surface-container-high hover:text-on-surface transition-colors text-on-surface-variant" id="theme-toggle"><span class="material-symbols-outlined text-[20px]">dark_mode</span></button><button class="px-space-xs py-1 rounded text-label-md bg-surface-container-high text-on-surface-variant hover:text-on-surface" id="rtl-toggle">RTL</button><a class="hidden sm:inline-flex items-center justify-center px-space-lg py-space-sm bg-primary text-on-primary rounded-xl text-label-md hover:bg-primary-container hover:text-on-primary-container transition-colors" data-path="custom-layouts" href="#">Build Your Layout</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+<!-- SECTION 1 — HERO -->
+<section class="relative w-full bg-surface-container-low py-space-xl overflow-hidden">
+<div class="max-w-7xl mx-auto px-gutter grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<div class="lg:col-span-7 space-y-space-lg z-10">
+<span class="text-label-md font-label-md text-primary tracking-wider uppercase bg-primary-fixed px-space-md py-space-xs rounded-full inline-block">Atelier Restoration Services</span>
+<h1 class="text-headline-xl font-headline-xl text-on-surface">Every Locomotive Has a Story. Let's Keep It Running.</h1>
+<p class="text-body-lg text-on-surface-variant max-w-xl">Entrust your precision models to our master horologists and railway engineers. From minor tune-ups to complete heritage restorations, we offer professional model railway repair, servicing, and digital conversions.</p>
+<div class="flex flex-wrap gap-space-md pt-space-sm">
+<a class="px-space-xl py-space-md bg-primary text-on-primary rounded-xl text-label-md hover:bg-primary-container hover:text-on-primary-container transition-all shadow-md" href="#enquiry-section">Request a Repair</a>
+<a class="px-space-xl py-space-md bg-surface-container-high text-on-surface rounded-xl text-label-md hover:bg-surface-container-highest transition-all" href="#services-section">Explore Services</a>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent rounded-2xl filter blur-xl"></div>
+<div class="relative bg-surface rounded-2xl p-space-md shadow-xl">
+<div class="bg-cover bg-center w-full h-80 rounded-xl" data-alt="A detailed macro workbench photography of a watchmaker's desk with an open brass steam locomotive model, delicate screwdrivers, magnifying loupes, soldering iron, and gear components under warm brass task lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBP7b3VgMQVvgX3WiK3pYIcnijEmCnvhbxpJhHCQfbGFVNbZ2lpRn0xIlJBpjpR9xWAkZbJuRYFUtLANNQ4TXPxfwnOLT9EeJQXWCs1AFG2EsVrMjGE_wzNhe9TIfCerhE9nimrJ91ej6F9Umw7-LkJiFSaaLD9kXwOTU65rpZqRULLWJ9Ul-fO6N_g2Ka5_HEdC9JHWLLnFM5OSb8QFTB41vKtnbv1zWw90-1ffqz2WlaTZNzCBNgg-Q')"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2 — REPAIR SERVICES -->
+<section class="w-full bg-surface py-space-xl" id="services-section">
+<div class="max-w-7xl mx-auto px-gutter space-y-space-xl">
+<div class="text-center max-w-2xl mx-auto space-y-space-sm">
+<span class="text-label-md font-label-md text-primary tracking-wider uppercase">Precision Craftsmanship</span>
+<h2 class="text-headline-lg font-headline-lg text-on-surface">Comprehensive Workshop Services</h2>
+<p class="text-body-md text-on-surface-variant">Every service is performed by hand using specialized tooling calibrated for HO, OO, N, and custom gauge mechanisms.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+<!-- Service 1 -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between hover:shadow-lg transition-all group">
+<div class="space-y-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">train</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Locomotive Repair</h3>
+<p class="text-body-sm text-on-surface-variant">Mechanical diagnosis, gear train alignment, chassis tuning, and linkage overhaul for steam and diesel models.</p>
+</div>
+<div class="pt-space-md text-label-md text-primary flex items-center gap-space-xs"><span>Learn specification</span><span class="material-symbols-outlined text-[16px]">arrow_forward</span></div>
+</div>
+<!-- Service 2 -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between hover:shadow-lg transition-all group">
+<div class="space-y-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">settings_suggest</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Motor Servicing</h3>
+<p class="text-body-sm text-on-surface-variant">Armature cleaning, brush replacement, magnet remagnetization, and bearing lubrication for ultra-smooth operation.</p>
+</div>
+<div class="pt-space-md text-label-md text-primary flex items-center gap-space-xs"><span>Learn specification</span><span class="material-symbols-outlined text-[16px]">arrow_forward</span></div>
+</div>
+<!-- Service 3 -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between hover:shadow-lg transition-all group">
+<div class="space-y-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">memory</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">DCC Installation</h3>
+<p class="text-body-sm text-on-surface-variant">Expert decoder hardwiring, sound project programming, speaker placement optimization, and stay-alive capacitor integration.</p>
+</div>
+<div class="pt-space-md text-label-md text-primary flex items-center gap-space-xs"><span>Learn specification</span><span class="material-symbols-outlined text-[16px]">arrow_forward</span></div>
+</div>
+<!-- Service 4 -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between hover:shadow-lg transition-all group">
+<div class="space-y-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Electrical Troubleshooting</h3>
+<p class="text-body-sm text-on-surface-variant">Short-circuit isolation, pickup continuity restoration, wiring harness replacement, and board diagnostics.</p>
+</div>
+<div class="pt-space-md text-label-md text-primary flex items-center gap-space-xs"><span>Learn specification</span><span class="material-symbols-outlined text-[16px]">arrow_forward</span></div>
+</div>
+<!-- Service 5 -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between hover:shadow-lg transition-all group">
+<div class="space-y-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">lightbulb</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Lighting Repair</h3>
+<p class="text-body-sm text-on-surface-variant">Micro-LED retrofits, directional headlamp/marker light restoration, and fiber-optic repair for realistic illumination.</p>
+</div>
+<div class="pt-space-md text-label-md text-primary flex items-center gap-space-xs"><span>Learn specification</span><span class="material-symbols-outlined text-[16px]">arrow_forward</span></div>
+</div>
+<!-- Service 6 -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between hover:shadow-lg transition-all group">
+<div class="space-y-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">radio_button_unchecked</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Wheel Servicing</h3>
+<p class="text-body-sm text-on-surface-variant">Back-to-back gauge calibration, flange turning, tread cleaning, and quartering adjustment for flawless tracking.</p>
+</div>
+<div class="pt-space-md text-label-md text-primary flex items-center gap-space-xs"><span>Learn specification</span><span class="material-symbols-outlined text-[16px]">arrow_forward</span></div>
+</div>
+<!-- Service 7 -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between hover:shadow-lg transition-all group">
+<div class="space-y-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">electric_car</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Track Pickup Repair</h3>
+<p class="text-body-sm text-on-surface-variant">Wiper tensioning, phosphor-bronze strip replacement, and tender-to-locomotive tether servicing for uninterrupted power.</p>
+</div>
+<div class="pt-space-md text-label-md text-primary flex items-center gap-space-xs"><span>Learn specification</span><span class="material-symbols-outlined text-[16px]">arrow_forward</span></div>
+</div>
+<!-- Service 8 -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between hover:shadow-lg transition-all group">
+<div class="space-y-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">history_edu</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Restoration</h3>
+<p class="text-body-sm text-on-surface-variant">Museum-grade cosmetic weathering, repainting, decal application, and vintage brass model rescue and revival.</p>
+</div>
+<div class="pt-space-md text-label-md text-primary flex items-center gap-space-xs"><span>Learn specification</span><span class="material-symbols-outlined text-[16px]">arrow_forward</span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3 — REPAIR PROCESS -->
+<section class="w-full bg-surface-container-low py-space-xl">
+<div class="max-w-7xl mx-auto px-gutter space-y-space-xl">
+<div class="text-center max-w-2xl mx-auto space-y-space-sm">
+<span class="text-label-md font-label-md text-primary tracking-wider uppercase">Service Journey</span>
+<h2 class="text-headline-lg font-headline-lg text-on-surface">How Your Model Travels Through Our Atelier</h2>
+<p class="text-body-md text-on-surface-variant">A transparent, meticulous workflow designed to keep you informed at every milestone.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-space-md relative">
+<!-- Step 1 -->
+<div class="bg-surface p-space-lg rounded-xl shadow-sm relative flex flex-col justify-between space-y-space-md">
+<div class="text-label-sm font-label-sm text-outline">01</div>
+<div class="space-y-space-xs">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary mb-space-sm">
+<span class="material-symbols-outlined text-[20px]">send</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Submit</h3>
+<p class="text-body-sm text-on-surface-variant">Fill out our enquiry form detailing your model and issue.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface p-space-lg rounded-xl shadow-sm relative flex flex-col justify-between space-y-space-md">
+<div class="text-label-sm font-label-sm text-outline">02</div>
+<div class="space-y-space-xs">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary mb-space-sm">
+<span class="material-symbols-outlined text-[20px]">stethoscope</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Diagnose</h3>
+<p class="text-body-sm text-on-surface-variant">Ship your model to our workshop for comprehensive bench testing.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface p-space-lg rounded-xl shadow-sm relative flex flex-col justify-between space-y-space-md">
+<div class="text-label-sm font-label-sm text-outline">03</div>
+<div class="space-y-space-xs">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary mb-space-sm">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Quote</h3>
+<p class="text-body-sm text-on-surface-variant">Receive a detailed estimate and repair plan for your approval.</p>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="bg-surface p-space-lg rounded-xl shadow-sm relative flex flex-col justify-between space-y-space-md">
+<div class="text-label-sm font-label-sm text-outline">04</div>
+<div class="space-y-space-xs">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary mb-space-sm">
+<span class="material-symbols-outlined text-[20px]">build</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Repair</h3>
+<p class="text-body-sm text-on-surface-variant">Master artisans perform meticulous mechanical &amp; electrical work.</p>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="bg-surface p-space-lg rounded-xl shadow-sm relative flex flex-col justify-between space-y-space-md">
+<div class="text-label-sm font-label-sm text-outline">05</div>
+<div class="space-y-space-xs">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary mb-space-sm">
+<span class="material-symbols-outlined text-[20px]">speed</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Test</h3>
+<p class="text-body-sm text-on-surface-variant">Rigorous oval testing for endurance, smooth draw, and sound.</p>
+</div>
+</div>
+<!-- Step 6 -->
+<div class="bg-surface p-space-lg rounded-xl shadow-sm relative flex flex-col justify-between space-y-space-md">
+<div class="text-label-sm font-label-sm text-outline">06</div>
+<div class="space-y-space-xs">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary mb-space-sm">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Return</h3>
+<p class="text-body-sm text-on-surface-variant">Securely packaged and shipped back to your collection.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4 — WORKSHOP SHOWCASE -->
+<section class="w-full bg-surface py-space-xl">
+<div class="max-w-7xl mx-auto px-gutter space-y-space-xl">
+<div class="flex flex-col md:flex-row justify-between items-end gap-space-lg">
+<div class="space-y-space-sm">
+<span class="text-label-md font-label-md text-primary tracking-wider uppercase">Inside the Atelier</span>
+<h2 class="text-headline-lg font-headline-lg text-on-surface">Workshop Impressions</h2>
+</div>
+<p class="text-body-md text-on-surface-variant max-w-md">A glimpse into our dedicated workstations where precision engineering meets traditional craftsmanship.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<div class="space-y-space-md">
+<div class="bg-cover bg-center w-full h-72 rounded-2xl shadow-sm" data-alt="Close-up editorial photography of an artisan's hands using fine tweezers to install a micro DCC decoder board inside a HO scale diesel locomotive chassis under warm vintage illumination." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAK46dObgTPw1qWyA8SlQxsf5EZNkUvns3nSyY2DaHW4HmFKDic2IyUxR8pdZgtPpMdQ0KLhdefpbU0LB_HMXx5e4boC2w38Xoz8V6PaeLDLC0FmWC3QbJmQRznn_Tucm_lVHXoABjFpt1YrTHO8gn2DWK57kzh5h-BdbVp-j_Sh28rAiewp4NmlMzTMlMaiGerIistMXeHwlz7k_FuaYYsUENAoEWC89e0EGlAUL-lnD20N4-hPsAloA')"></div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Miniature Motor Tuning</h3>
+<p class="text-body-sm text-on-surface-variant">Fine adjustment of coreless motors and gear mesh tolerances for silent running.</p>
+</div>
+<div class="space-y-space-md">
+<div class="bg-cover bg-center w-full h-72 rounded-2xl shadow-sm" data-alt="Detailed macro shot of an organized workbench with brass specialized gear pullers, micro files, jeweler's screwdrivers, and spare locomotive wheels arranged neatly on a green felt mat." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCO5n-620_9uoMictuzhxUOkDakw5tQ704gu4ESe2KD6zo5OM78t75N_oDZCbVxlQcwHa-MtuyqQDzR7_C7p0oJna-dBKNDS7azHo4ZNORVIef7KDtTGf_JT0QF-w8-6MDaY9L6Kh-Yky12LKkq3Un_GZbfFnUgUnCEvrQMtENYDRMd_ezawaYo6qu5K37RePZ6DAUDNKHRxQc8LV4KkPvqeecn-jsMBsitNxUTstsxBOKSpyWwEZaK1Q')"></div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Specialized Tooling</h3>
+<p class="text-body-sm text-on-surface-variant">Custom jigs and micrometers ensuring exact gauge alignment down to the micron.</p>
+</div>
+<div class="space-y-space-md">
+<div class="bg-cover bg-center w-full h-72 rounded-2xl shadow-sm" data-alt="Editorial image of track system testing with a steam locomotive on a wooden test bench, showing electrical wiring probes and oscilloscope monitoring DCC signal integrity." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCF1icdhBOsxzlsv8_53qDV4a4m7vBAVZH6R4TJBUT-C45B1DPN1qz5NYZq7u4ca1Aq8s2RnXDElUMDM0lkwaoG13uIqeiBNvTlwQgcpNojkAoa7qVJbjv_1R9WNRBYnQlToaX7JtZwBX3NkSY8K4opnPCAeaHL8Vw5VYPz3IfBogIzXhmxpRfjbBgj3-U7lPprZySouRG9HJ5gqnZi8BQ3cD9fC1WbOAtyAxZCdb72vQXCyxYFjg5OEw')"></div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Track &amp; Electrical Diagnostics</h3>
+<p class="text-body-sm text-on-surface-variant">Thorough electrical testing simulating heavy loads and continuous operation.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5 — REPAIR ENQUIRY -->
+<section class="w-full bg-surface-container-low py-space-xl" id="enquiry-section">
+<div class="max-w-7xl mx-auto px-gutter grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<div class="lg:col-span-5 space-y-space-lg">
+<span class="text-label-md font-label-md text-primary tracking-wider uppercase">Start Your Request</span>
+<h2 class="text-headline-lg font-headline-lg text-on-surface">Book Your Locomotive Repair</h2>
+<p class="text-body-md text-on-surface-variant">Provide details about your model and the issues you're experiencing. Our master technicians will review your submission and respond with next steps and preliminary estimates.</p>
+<div class="space-y-space-md pt-space-md">
+<div class="bg-cover bg-center w-full h-64 rounded-xl shadow-md" data-alt="Atmospheric workshop visual showing a steam locomotive tender disassembled on a wooden work tray with vintage tools and warm brass lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDWAykuSN_8x5QoWfBhP7cYk_GYSs49ZpfpVKFIArE0-b9PBCRdvZH4zxAASSm_9uBpZHIeGlq4F9CTuqwgryaCyVfVkGPRtP7BgTeb66DHSOBYlI3hU1h_-XUYnHCXpKxIdnIL4MHHYWfm86WkpNLRcdcF2RJJYwg_IW4HqYhGLrhnixAV-6_H8K97WYiWMGvugwHePDUtdmtQSNXbFtj7-ZVCU4Y7YPi4-3schpNQPzxXfjkCPtmapw')"></div>
+</div>
+</div>
+<div class="lg:col-span-7 bg-surface p-space-xl rounded-2xl shadow-lg">
+<form class="space-y-space-md">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="space-y-space-xs">
+<label class="text-label-md font-label-md text-on-surface">Name</label>
+<input class="w-full px-space-md py-3 bg-surface-container-low rounded-xl border border-outline-variant text-body-md text-on-surface focus:outline-none focus:border-primary" placeholder="Your full name" type="text"/>
+</div>
+<div class="space-y-space-xs">
+<label class="text-label-md font-label-md text-on-surface">Email</label>
+<input class="w-full px-space-md py-3 bg-surface-container-low rounded-xl border border-outline-variant text-body-md text-on-surface focus:outline-none focus:border-primary" placeholder="your.email@example.com" type="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="space-y-space-xs">
+<label class="text-label-md font-label-md text-on-surface">Phone</label>
+<input class="w-full px-space-md py-3 bg-surface-container-low rounded-xl border border-outline-variant text-body-md text-on-surface focus:outline-none focus:border-primary" placeholder="+1 (555) 000-0000" type="tel"/>
+</div>
+<div class="space-y-space-xs">
+<label class="text-label-md font-label-md text-on-surface">Model / Locomotive</label>
+<input class="w-full px-space-md py-3 bg-surface-container-low rounded-xl border border-outline-variant text-body-md text-on-surface focus:outline-none focus:border-primary" placeholder="e.g. Class 40, Big Boy" type="text"/>
+</div>
+<div class="space-y-space-xs">
+<label class="text-label-md font-label-md text-on-surface">Brand</label>
+<input class="w-full px-space-md py-3 bg-surface-container-low rounded-xl border border-outline-variant text-body-md text-on-surface focus:outline-none focus:border-primary" placeholder="e.g. Hornby, Märklin" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="space-y-space-xs">
+<label class="text-label-md font-label-md text-on-surface">Scale</label>
+<select class="w-full px-space-md py-3 bg-surface-container-low rounded-xl border border-outline-variant text-body-md text-on-surface focus:outline-none focus:border-primary">
+<option>HO Scale</option>
+<option>OO Scale</option>
+<option>N Scale</option>
+<option>O Scale</option>
+<option>G Scale</option>
+<option>Other</option>
+</select>
+</div>
+<div class="space-y-space-xs">
+<label class="text-label-md font-label-md text-on-surface">Primary Problem</label>
+<select class="w-full px-space-md py-3 bg-surface-container-low rounded-xl border border-outline-variant text-body-md text-on-surface focus:outline-none focus:border-primary">
+<option>Motor / Mechanical Issue</option>
+<option>DCC Decoder Installation</option>
+<option>Electrical / Pickup Failure</option>
+<option>Lighting &amp; Sound Repair</option>
+<option>General Servicing &amp; Tuning</option>
+<option>Full Restoration</option>
+</select>
+</div>
+</div>
+<div class="space-y-space-xs">
+<label class="text-label-md font-label-md text-on-surface">Additional Information</label>
+<textarea class="w-full px-space-md py-3 bg-surface-container-low rounded-xl border border-outline-variant text-body-md text-on-surface focus:outline-none focus:border-primary" placeholder="Describe symptoms, modifications, or specific requests..." rows="4"></textarea>
+</div>
+<div class="space-y-space-xs">
+<label class="text-label-md font-label-md text-on-surface">Upload Photos (Optional)</label>
+<div class="w-full px-space-md py-6 bg-surface-container-low rounded-xl border border-dashed border-outline-variant text-center cursor-pointer hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant text-[28px] mb-space-xs">upload_file</span>
+<p class="text-body-sm text-on-surface-variant">Drag and drop photos of your locomotive here, or <span class="text-primary underline">browse files</span></p>
+</div>
+</div>
+<button class="w-full py-space-md bg-primary text-on-primary rounded-xl text-label-md hover:bg-primary-container hover:text-on-primary-container transition-all shadow-md" type="submit">Submit Repair Enquiry</button>
+</form>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container-low py-space-xl"><div class="max-w-7xl mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl mb-space-xl"><div class="space-y-space-md lg:col-span-1"><div class="flex items-center gap-space-sm"><img alt="Iron &amp; Gauge Atelier Logo" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3qEV6vnr8VlZfLl05S--QeurcSKvtHop_ZtVJgPxYmv9ODu_39fPUUwJBshP_ZH9wAVJpwVhXxXh2DrS0zOkC81LT0eOYEjP_t2UEHWgjnOs9Y7bs3I4fI2itfPBy5pTHQPh0x9GFBpqBwgjJtHpNBAcxrLDCuI34VpF9S1hlPszwLWubdLq5JKZujG4FnrT55sDw9o5LFLNB2HpIEYbZVq7LWIPKm3s4wcr5n258cyRLnMcc7NL_HA"/><span class="text-headline-sm font-headline-sm text-on-surface">Iron &amp; Gauge Atelier</span></div><p class="text-body-sm text-on-surface-variant">Building little worlds, one railway at a time.</p><p class="text-body-sm font-semibold text-on-surface">Small scale. Serious craftsmanship.</p></div><div class="space-y-space-md"><h4 class="text-label-md font-label-md uppercase text-on-surface tracking-wider">Explore</h4><ul class="space-y-space-xs text-body-sm text-on-surface-variant"><li><a class="hover:text-on-surface" href="#">Home 1 — The Collection</a></li><li><a class="hover:text-on-surface" data-path="home-2" href="#">Home 2 — The Workshop</a></li><li><a class="hover:text-on-surface" data-path="products" href="#">Products</a></li><li><a class="hover:text-on-surface" href="#">Custom Layout Building</a></li><li><a class="hover:text-on-surface" data-path="repairs" href="#">Repairs</a></li><li><a class="hover:text-on-surface" data-path="contact" href="#">Contact</a></li></ul></div><div class="space-y-space-md"><h4 class="text-label-md font-label-md uppercase text-on-surface tracking-wider">Specialist Services</h4><ul class="space-y-space-xs text-body-sm text-on-surface-variant"><li><span class="hover:text-on-surface">Model Trains &amp; Accessories</span></li><li><span class="hover:text-on-surface">Custom Layout Design</span></li><li><span class="hover:text-on-surface">Layout Construction</span></li><li><span class="hover:text-on-surface">Locomotive Repairs</span></li><li><span class="hover:text-on-surface">Maintenance &amp; Servicing</span></li></ul></div><div class="space-y-space-md"><h4 class="text-label-md font-label-md uppercase text-on-surface tracking-wider">Contact</h4><ul class="space-y-space-xs text-body-sm text-on-surface-variant"><li><strong>Visit:</strong> By appointment at our model railway workshop</li><li><strong>Email:</strong> hello@miniaturerailway.co.uk</li><li><strong>Phone:</strong> +44 20 7946 0182</li><li><strong>Hours:</strong> Mon–Sat, 9:00 AM–6:00 PM</li></ul></div><div class="space-y-space-md"><h4 class="text-label-md font-label-md uppercase text-on-surface tracking-wider">Enquiries</h4><p class="text-body-sm text-on-surface-variant">Looking for a particular locomotive, planning a layout, or need a repair? We’re happy to help.</p><a class="inline-flex items-center justify-center px-space-md py-2 bg-primary text-on-primary rounded-xl text-label-md hover:bg-primary-container hover:text-on-primary-container transition-colors" href="#">Make an Enquiry</a></div></div><div class="max-w-7xl mx-auto px-gutter pt-space-lg border-t border-outline-variant/30 flex flex-col sm:flex-row justify-between items-center text-body-sm text-on-surface-variant"><p>&copy; 2026 Iron &amp; Gauge Atelier. All rights reserved.</p><div class="flex gap-space-lg mt-space-sm sm:mt-0"><a class="hover:text-on-surface" href="#">Instagram</a> · <a class="hover:text-on-surface" href="#">Facebook</a> · <a class="hover:text-on-surface" href="#">YouTube</a></div></div></footer><div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-50 hidden flex items-center justify-center p-gutter" id="search-modal"><div class="bg-surface rounded-xl max-w-lg w-full p-space-lg shadow-xl relative"><button class="absolute top-space-md right-space-md text-on-surface-variant hover:text-on-surface" id="close-search"><span class="material-symbols-outlined">close</span></button><h3 class="text-headline-sm font-headline-sm text-on-surface mb-space-md">Search Atelier</h3><input class="w-full px-space-md py-space-sm bg-surface-container-low rounded-xl border border-outline-variant text-body-md text-on-surface focus:outline-none focus:border-primary" placeholder="Search locomotives, scales, accessories..." type="text"/></div></div><script>const themeToggle = document.getElementById('theme-toggle');const rtlToggle = document.getElementById('rtl-toggle');const searchBtn = document.getElementById('search-btn');const searchModal = document.getElementById('search-modal');const closeSearch = document.getElementById('close-search');searchBtn.addEventListener('click', () => { searchModal.classList.remove('hidden'); });closeSearch.addEventListener('click', () => { searchModal.classList.add('hidden'); });searchModal.addEventListener('click', (e) => { if (e.target === searchModal) searchModal.classList.add('hidden'); });</script>
+
+
+
+
+<script>
+  // Theme Toggle Logic
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  const htmlEl = document.documentElement;
+  
+  if (localStorage.getItem('theme') === 'dark') {
+    htmlEl.classList.add('dark');
+  }
+
+  if(themeToggleBtn) {
+      themeToggleBtn.addEventListener('click', () => {
+        htmlEl.classList.toggle('dark');
+        localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+      });
+  }
+
+  // Dropdown Logic
+  const homeBtn = document.getElementById('home-menu-btn');
+  const homeMenu = document.getElementById('home-menu');
+  if (homeBtn && homeMenu) {
+      homeBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          homeMenu.classList.toggle('hidden');
+      });
+      document.addEventListener('click', (e) => {
+          if (!homeBtn.contains(e.target) && !homeMenu.contains(e.target)) {
+              homeMenu.classList.add('hidden');
+          }
+      });
+  }
+
+  // Active Link Logic
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  const navLinks = document.querySelectorAll('nav a');
+  
+  // Handle Home Button Active State separately because it's a button opening a dropdown
+  if (currentPath === 'index.html' || currentPath === 'home2.html') {
+      const homeMenuBtn = document.getElementById('home-menu-btn');
+      if (homeMenuBtn) {
+          homeMenuBtn.classList.remove('text-on-surface-variant');
+          homeMenuBtn.classList.add('text-primary');
+      }
+  }
+
+  navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      // Some hrefs might be full URLs, but ours are relative like "products.html"
+      if (href === currentPath || (currentPath === '' && href === 'index.html')) {
+          link.classList.remove('text-on-surface-variant');
+          link.classList.add('text-primary', 'font-bold');
+          
+          // If it's inside the dropdown, also highlight it specifically
+          if (link.parentElement && link.parentElement.id === 'home-menu') {
+              link.classList.add('bg-surface-container');
+          }
+      }
+  });
+
+
+  // Persistent RTL Logic
+  const rtlBtn = document.getElementById('rtl-toggle');
+  if (localStorage.getItem('direction') === 'rtl') {
+    document.documentElement.setAttribute('dir', 'rtl');
+    if (rtlBtn) rtlBtn.textContent = 'LTR';
+  } else {
+    document.documentElement.setAttribute('dir', 'ltr');
+    if (rtlBtn) rtlBtn.textContent = 'RTL';
+  }
+
+  if (rtlBtn) {
+      rtlBtn.addEventListener('click', () => {
+          const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
+          const newDir = isRtl ? 'ltr' : 'rtl';
+          document.documentElement.setAttribute('dir', newDir);
+          rtlBtn.textContent = isRtl ? 'RTL' : 'LTR';
+          localStorage.setItem('direction', newDir);
+      });
+  }
+
+</script>
+</body>
+
+
+</html>

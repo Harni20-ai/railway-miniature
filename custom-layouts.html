@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}
+  /* Text vibrancy overrides */
+  html.dark .text-primary { color: #ffb2bc !important; }
+  html.dark .hover\:text-primary:hover { color: #ffd9dd !important; }
+  html.dark .text-secondary { color: #baeed9 !important; }
+  html.dark .hover\:text-secondary:hover { color: #ffffff !important; }
+
+  /* Tertiary / Brown Text vibrancy overrides */
+  html.dark .text-tertiary { color: #ffdea5 !important; }
+  html.dark .text-tertiary-container { color: #ffdea5 !important; }
+  html.dark .text-on-tertiary-container { color: #ffe6bd !important; }
+  html.dark .text-tertiary-fixed { color: #ffdea5 !important; }
+  html.dark .text-on-tertiary-fixed { color: #261900 !important; }
+  html.dark .bg-tertiary-fixed { background-color: #ffdea5 !important; }
+  html.dark .bg-tertiary-fixed-dim { background-color: #e9c176 !important; }
+
+  /* Secondary Fixed text visibility override */
+  html.dark .text-secondary-fixed { color: #ffffff !important; font-weight: 600 !important; }
+
+  /* Gradient overrides for Surface (Fixes white washout gap at bottom of hero images) */
+  html.dark .from-surface {
+      --tw-gradient-from: #121212 var(--tw-gradient-from-position) !important;
+      --tw-gradient-to: rgba(18, 18, 18, 0) var(--tw-gradient-to-position) !important;
+      --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+  }
+  html.dark .via-surface\/60 {
+      --tw-gradient-to: rgba(18, 18, 18, 0)  var(--tw-gradient-to-position) !important;
+      --tw-gradient-stops: var(--tw-gradient-from), rgba(18, 18, 18, 0.6) var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+  }
+
+  /* Fix contrast for text-primary when used inside bg-primary-fixed */
+  html.dark .bg-primary-fixed.text-primary,
+  html.dark .bg-primary-fixed .text-primary {
+      color: #400013 !important; 
+  }
+</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">  tailwind.config = {    darkMode: "class",    theme: {      extend: {        "colors": {          "on-secondary-container": "#3d6d5d",          "on-primary-fixed": "#400013",          "on-secondary": "#ffffff",          "on-primary-container": "#ee8495",          "primary-container": "#6b1d2f",          "on-error": "#ffffff",          "tertiary": "#322200",          "on-error-container": "#93000a",          "on-tertiary-fixed-variant": "#5d4201",          "surface-container": "#efeeeb",          "surface-container-highest": "#e4e2df",          "tertiary-container": "#4d3600",          "surface-container-low": "#f5f3f0",          "on-surface-variant": "#544244",          "on-secondary-fixed-variant": "#1d4f40",          "surface-bright": "#fbf9f6",          "error-container": "#ffdad6",          "on-tertiary": "#ffffff",          "secondary": "#376757",          "surface-container-high": "#eae8e5",          "surface": "#fbf9f6",          "inverse-on-surface": "#f2f0ed",          "primary-fixed-dim": "#ffb2bc",          "inverse-primary": "#ffb2bc",          "primary-fixed": "#ffd9dd",          "background": "#fbf9f6",          "secondary-fixed": "#baeed9",          "secondary-fixed-dim": "#9ed1bd",          "primary": "#4e051a",          "on-primary": "#ffffff",          "on-surface": "#1b1c1a",          "outline": "#877274",          "error": "#ba1a1a",          "on-primary-fixed-variant": "#7c2a3b",          "inverse-surface": "#30312f",          "on-tertiary-fixed": "#261900",          "surface-dim": "#dbdad7",          "on-secondary-fixed": "#002117",          "tertiary-fixed": "#ffdea5",          "surface-variant": "#e4e2df",          "on-tertiary-container": "#c39f58",          "outline-variant": "#dac0c2",          "surface-tint": "#9a4152",          "tertiary-fixed-dim": "#e9c176",          "surface-container-lowest": "#ffffff",          "secondary-container": "#baeed9",          "on-background": "#1b1c1a"        },        "borderRadius": {          "DEFAULT": "0.125rem",          "lg": "0.25rem",          "xl": "0.5rem",          "full": "0.75rem"        },        "spacing": {          "gutter": "1.5rem",          "space-md": "1rem",          "space-lg": "1.5rem",          "space-xl": "3rem",          "margin": "2rem",          "space-xs": "0.25rem",          "space-sm": "0.5rem"        },        "fontFamily": {          "body-sm": ["Inter"],          "label-md": ["Inter"],          "headline-xl": ["Playfair Display"],          "headline-md": ["Playfair Display"],          "label-sm": ["Inter"],          "headline-sm": ["Playfair Display"],          "headline-lg": ["Playfair Display"],          "body-md": ["Inter"],          "body-lg": ["Inter"]        },        "fontSize": {          "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }],          "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],          "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],          "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],          "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "500" }],          "headline-sm": ["22px", { "lineHeight": "28px", "fontWeight": "500" }],          "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600" }],          "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],          "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]        }      }    }  }</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Playfair+Display:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style id="dark-mode-overrides">
+  /* Dark mode overrides for semantic colors */
+  html.dark .bg-surface-container-lowest { background-color: #0a0a0a !important; }
+  html.dark .bg-surface { background-color: #121212 !important; }
+  html.dark .bg-surface-container-low { background-color: #1a1a1a !important; }
+  html.dark .bg-surface-container { background-color: #212121 !important; }
+  html.dark .bg-surface-container-high { background-color: #2b2b2b !important; }
+  html.dark .bg-surface-container-highest { background-color: #333333 !important; }
+  
+  html.dark .bg-background { background-color: #121212 !important; }
+  html.dark .text-on-background { color: #e3e3e3 !important; }
+
+  html.dark .text-on-surface { color: #e3e3e3 !important; }
+  html.dark .text-on-surface-variant { color: #c4c4c4 !important; }
+  html.dark .text-outline { color: #999999 !important; }
+  
+  html.dark .bg-outline { background-color: #737373 !important; }
+  html.dark .bg-outline-variant { background-color: #444444 !important; }
+  
+  html.dark .border-outline { border-color: #737373 !important; }
+  html.dark .border-outline-variant { border-color: #444444 !important; }
+  
+  /* Gradient overrides for Hero sections */
+  html.dark .from-background\/95 {
+      --tw-gradient-from: rgba(18, 18, 18, 0.95) var(--tw-gradient-from-position) !important;
+      --tw-gradient-to: rgba(18, 18, 18, 0) var(--tw-gradient-to-position) !important;
+      --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+  }
+  html.dark .via-background\/70 {
+      --tw-gradient-to: rgba(18, 18, 18, 0)  var(--tw-gradient-to-position) !important;
+      --tw-gradient-stops: var(--tw-gradient-from), rgba(18, 18, 18, 0.7) var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+  }
+
+  /* Opacity variations */
+  html.dark .bg-surface\/10 { background-color: rgba(18, 18, 18, 0.1) !important; }
+  html.dark .bg-surface\/80 { background-color: rgba(18, 18, 18, 0.8) !important; }
+  html.dark .bg-surface\/90 { background-color: rgba(18, 18, 18, 0.9) !important; }
+  html.dark .bg-surface-container-high\/80 { background-color: rgba(43, 43, 43, 0.8) !important; }
+  html.dark .bg-surface-container-high\/90 { background-color: rgba(43, 43, 43, 0.9) !important; }
+  html.dark .bg-surface-container\/20 { background-color: rgba(33, 33, 33, 0.2) !important; }
+
+  html.dark .border-outline-variant\/20 { border-color: rgba(68, 68, 68, 0.2) !important; }
+  html.dark .border-outline-variant\/30 { border-color: rgba(68, 68, 68, 0.3) !important; }
+  html.dark .border-outline-variant\/40 { border-color: rgba(68, 68, 68, 0.4) !important; }
+
+  /* Hover states */
+  html.dark .hover\:bg-surface-container-high:hover { background-color: #333333 !important; }
+  html.dark .hover\:text-on-surface:hover { color: #ffffff !important; }
+  html.dark .group:hover .group-hover\:text-on-surface { color: #ffffff !important; }
+  
+  /* Input fields */
+  html.dark input.bg-surface-container-low { background-color: #212121 !important; color: #ffffff !important; }
+  html.dark textarea.bg-surface-container-low { background-color: #212121 !important; color: #ffffff !important; }
+  html.dark select.bg-surface-container-low { background-color: #212121 !important; color: #ffffff !important; }
+</style>
+</head><body class="bg-surface font-body-md text-on-surface"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-7xl mx-auto px-gutter flex items-center justify-between"><div class="flex items-center gap-space-md"><img alt="Iron &amp; Gauge Atelier Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3qEV6vnr8VlZfLl05S--QeurcSKvtHop_ZtVJgPxYmv9ODu_39fPUUwJBshP_ZH9wAVJpwVhXxXh2DrS0zOkC81LT0eOYEjP_t2UEHWgjnOs9Y7bs3I4fI2itfPBy5pTHQPh0x9GFBpqBwgjJtHpNBAcxrLDCuI34VpF9S1hlPszwLWubdLq5JKZujG4FnrT55sDw9o5LFLNB2HpIEYbZVq7LWIPKm3s4wcr5n258cyRLnMcc7NL_HA"/><span class="text-headline-sm font-headline-sm tracking-tight text-on-surface">Iron &amp; Gauge Atelier</span></div><nav class="hidden lg:flex items-center gap-space-lg">
+<div class="relative flex items-center h-full">
+  <button id="home-menu-btn" class="transition-colors text-body-md text-on-surface-variant hover:text-on-surface flex items-center gap-1 font-bold py-4">Home <span class="material-symbols-outlined text-[16px]">expand_more</span></button>
+  <div id="home-menu" class="absolute left-0 top-full w-40 bg-surface shadow-lg rounded-lg overflow-hidden hidden z-50 border border-outline-variant">
+    <a href="index.html" class="block px-4 py-2 text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface cursor-pointer">Home 1</a>
+    <a href="home2.html" class="block px-4 py-2 text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface cursor-pointer">Home 2</a>
+  </div>
+</div>
+<a class="text-body-md text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer" href="products.html">Products</a>
+<a class="text-body-md text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer" href="custom-layouts.html">Custom Layouts</a>
+<a class="text-body-md text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer" href="repairs.html">Repairs</a>
+<a class="text-body-md text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer" href="contact.html">Contact</a>
+</nav><div class="flex items-center gap-space-md"><button class="p-space-xs rounded-full hover:bg-surface-container-high hover:text-on-surface transition-colors text-on-surface-variant" id="search-btn"><span class="material-symbols-outlined text-[20px]">search</span></button><button class="relative p-space-xs rounded-full hover:bg-surface-container-high hover:text-on-surface transition-colors text-on-surface-variant" id="wishlist-btn"><span class="material-symbols-outlined text-[20px]">favorite</span><span class="absolute -top-1 -right-1 bg-primary text-on-primary text-label-sm w-4 h-4 rounded-full flex items-center justify-center">3</span></button><button class="relative p-space-xs rounded-full hover:bg-surface-container-high hover:text-on-surface transition-colors text-on-surface-variant" id="cart-btn"><span class="material-symbols-outlined text-[20px]">shopping_bag</span><span class="absolute -top-1 -right-1 bg-primary text-on-primary text-label-sm w-4 h-4 rounded-full flex items-center justify-center">2</span></button><button class="p-space-xs rounded-full hover:bg-surface-container-high hover:text-on-surface transition-colors text-on-surface-variant" id="theme-toggle"><span class="material-symbols-outlined text-[20px]">dark_mode</span></button><button class="px-space-xs py-1 rounded text-label-md bg-surface-container-high text-on-surface-variant hover:text-on-surface" id="rtl-toggle">RTL</button><a class="hidden sm:inline-flex items-center justify-center px-space-lg py-space-sm bg-primary text-on-primary rounded-xl text-label-md hover:bg-primary-container hover:text-on-primary-container transition-colors" data-path="custom-layouts" href="#">Build Your Layout</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full bg-surface"><div class="flex flex-col w-full">
+<!-- SECTION 1 — HERO -->
+<section class="relative flex items-center overflow-hidden bg-inverse-surface pt-32 pb-40">
+<div class="absolute inset-0 z-0">
+<div class="bg-cover bg-center w-full h-full opacity-60 scale-105" data-alt="A sprawling, highly detailed museum-grade custom model railway layout featuring rolling green hills, a vintage steam locomotive crossing a stone viaduct at twilight, warm glowing cottage windows, intricate hand-painted scenery, and atmospheric theatrical lighting. Rich deep burgundy and warm brass highlights." style="background-image: url('custom_layouts_hero.jpg')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-inverse-surface/95 via-inverse-surface/60 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-gutter w-full">
+<div class="max-w-2xl flex flex-col items-start text-left">
+<div class="inline-flex items-center gap-space-sm px-space-md py-space-xs rounded-full bg-secondary-fixed text-on-secondary-fixed text-label-sm uppercase tracking-widest mb-space-lg">
+<span class="material-symbols-outlined text-[16px]">railway_alert</span>
+        Bespoke Atelier Services
+      </div>
+<h1 class="text-headline-xl font-headline-xl text-inverse-on-surface mb-space-md tracking-tight">
+        We Build Railways<br/>in Miniature
+      </h1>
+<p class="text-body-lg text-inverse-on-surface/80 mb-space-xl">
+        From a first layout to a fully detailed miniature railway world, we design and build layouts around your vision.
+      </p>
+<div class="flex flex-wrap items-center justify-start gap-space-md">
+<a class="px-space-xl py-4 bg-primary text-on-primary rounded-xl text-label-md hover:bg-primary-container hover:text-on-primary-container transition-all shadow-xl" href="#process">
+          Discuss Your Layout
+        </a>
+<a class="px-space-xl py-4 bg-inverse-on-surface/10 text-inverse-on-surface border border-inverse-on-surface/20 rounded-xl text-label-md hover:bg-inverse-on-surface/20 transition-all backdrop-blur-sm" href="#process">
+          Explore Our Process
+        </a>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2 — WHAT WE CREATE -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl">
+<div>
+<span class="text-label-sm uppercase tracking-widest text-primary mb-space-xs block">Portfolio Categories</span>
+<h2 class="text-headline-lg font-headline-lg text-on-surface">What We Create</h2>
+</div>
+<p class="text-body-md text-on-surface-variant max-w-md mt-space-sm md:mt-0">
+          Tailored engineering and artisanal craftsmanship adapted for residential spaces, grand exhibitions, and commercial showcases.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Card 1 -->
+<div class="group bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="h-64 overflow-hidden relative">
+<div class="bg-cover bg-center w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="An intimate home model railway layout built into a custom mahogany bookcase study, featuring N scale alpine tracks, miniature chalets, and soft warm interior lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC8rPwj-AonnZtUC2ZxzdJrIexOGCvri1HjaR5OMa-OSOdfdmsxn4O8pIg0JXGY71e9u6N83PW7teyBsicUBduAAM6hkUwkVfUndIUDxuYEhQ1masRXZ3BuLCx_915NstlDBFJHXh-igRSqfk5b9ZIUeIc99QbbjqdlQB5oR3677EYQaK85Rsx-oKvxrOXR2fGVMpw8qrp57FXXda5MWcYuG3IZZ4JFelgdVVf7BN48fJeg3ESV7NvO8A')"></div>
+<span class="absolute top-space-md left-space-md px-space-sm py-1 bg-surface/90 backdrop-blur-md rounded text-label-sm uppercase tracking-wider text-on-surface">Residential</span>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-space-sm">Home Layouts</h3>
+<p class="text-body-sm text-on-surface-variant">Seamlessly integrated into studies, living rooms, and dedicated lofts with bespoke cabinetry and fold-away mechanisms.</p>
+</div>
+<div class="mt-space-lg pt-space-md flex items-center text-label-md text-primary gap-space-xs group-hover:translate-x-1 transition-transform cursor-pointer">
+<span>Explore Home Builds</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="h-64 overflow-hidden relative">
+<div class="bg-cover bg-center w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A massive modular exhibition railway layout with multiple tracks, DCC automated signaling, spectators watching dual freight and passenger trains pass through a detailed junction." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBNNnbjcVjd1vgAoiMLQrjSDglEBXmgKyzEVbiHTQOT_Rb-0U5Yz-0fEYuIEHlNmdxra9ncu60qbs6CbwCJd49sDKEjLXvw31bhKmiah-vBw_9TZaJ7cuzmI68lJ-iFFu_y6tS36XdNjz-5WDT9i85roMNx1t41G2ZLcSeVH2_rhLObHnCsZ6dqJDlUKV87usOJO_nLfIlpcmIJ1mxyhv53HJP6tk1SWBLDS5VEmEzgq78dKriiqSza2w')"></div>
+<span class="absolute top-space-md left-space-md px-space-sm py-1 bg-surface/90 backdrop-blur-md rounded text-label-sm uppercase tracking-wider text-on-surface">Exhibition</span>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-space-sm">Exhibition Layouts</h3>
+<p class="text-body-sm text-on-surface-variant">Robust, highly transportable modular designs built for heavy public operation and effortless setup at conventions.</p>
+</div>
+<div class="mt-space-lg pt-space-md flex items-center text-label-md text-primary gap-space-xs group-hover:translate-x-1 transition-transform cursor-pointer">
+<span>Explore Exhibition Builds</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="h-64 overflow-hidden relative">
+<div class="bg-cover bg-center w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A museum-grade historical dioramas featuring a vintage 1920s railway station with authentic architectural brickwork, miniature passengers, and museum glass casing." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBJJdS44580ZBJIgROSoHlivGDaQliv0M7ezEzep3FA7lece1DI63l70o_DPWRk5HOQE1BzE4tPAlS1IeXSqDnejcfzjklr2mvMzRYyHoprDMQiUjlMprJorYM56urwVGSOjJBAcTCvBV3Wu6V62oJeBbFr9l8W0aYu2U0n8RNcFIO3h7U0AghO4zPxlhxLEKA8C-75RMatocw-nKMOyiTEmTKgDDN-jlcdjtE4OQwYG6hqHw18coqYRg')"></div>
+<span class="absolute top-space-md left-space-md px-space-sm py-1 bg-surface/90 backdrop-blur-md rounded text-label-sm uppercase tracking-wider text-on-surface">Heritage</span>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-space-sm">Museum Displays</h3>
+<p class="text-body-sm text-on-surface-variant">Archival-quality historical recreations designed for permanent museum installations with bulletproof reliability.</p>
+</div>
+<div class="mt-space-lg pt-space-md flex items-center text-label-md text-primary gap-space-xs group-hover:translate-x-1 transition-transform cursor-pointer">
+<span>Explore Museum Displays</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="h-64 overflow-hidden relative">
+<div class="bg-cover bg-center w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A sleek corporate commercial display layout in an architectural lobby featuring ultra-modern high-speed trains cutting through minimalist cityscapes." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC4fDov3B1F8FYXeWgD9bjMkxqa-qE4UzKnMyrNnuq3jo0jItmkn1b5qCMK3-u8Wx8Me3ZWPRR57jzpZuO-mCiiYK-ddWlckxEhqnEh_agzpPIpvApKftXV4gGatWErgbJ-sWn_Rhh85by_rWtgn0bcsiKPYRDUgr4FuUbHGVxj29FbOdgf-iCvcOcxY6G5EDyCktCO6wS0Bxp1KQA59Z5mCotChlmwGrm_1pKly5KYhs6378N4yFjbMA')"></div>
+<span class="absolute top-space-md left-space-md px-space-sm py-1 bg-surface/90 backdrop-blur-md rounded text-label-sm uppercase tracking-wider text-on-surface">Corporate</span>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-space-sm">Commercial Displays</h3>
+<p class="text-body-sm text-on-surface-variant">Striking kinetic art installations and window displays engineered to captivate audiences in commercial venues.</p>
+</div>
+<div class="mt-space-lg pt-space-md flex items-center text-label-md text-primary gap-space-xs group-hover:translate-x-1 transition-transform cursor-pointer">
+<span>Explore Commercial</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="group bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="h-64 overflow-hidden relative">
+<div class="bg-cover bg-center w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="Interlocking modular layout sections showing precision brass joinery, quick-connect wiring harnesses, and interchangeable rural and industrial segments." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA3P4s4IF4s_wuPsb9p6RBjg-Auut9E_A2VF1Y5ywh7nuaUEpibC2IA47BxLF7BhmnLpgg8jf7TshXMyfQ7I08VS0a8TUxteZDNU1Z33DCIhRkVML8jxdfwOIc2wKOrqV36Uijc1i6jKWEHzPKGFqj839zp2t0kLg9LuU6W1YjImtvdCkUmeK0Ig4rCj15tezMMeT0uSfFH3uPz2gvbep97YhJ3TRnc3pM5C30Uo3ppUJjn1wEREkBV5A')"></div>
+<span class="absolute top-space-md left-space-md px-space-sm py-1 bg-surface/90 backdrop-blur-md rounded text-label-sm uppercase tracking-wider text-on-surface">Scalable</span>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-space-sm">Modular Layouts</h3>
+<p class="text-body-sm text-on-surface-variant">Expandable systems allowing layouts to grow over time with standardized benchwork and plug-and-play wiring.</p>
+</div>
+<div class="mt-space-lg pt-space-md flex items-center text-label-md text-primary gap-space-xs group-hover:translate-x-1 transition-transform cursor-pointer">
+<span>Explore Modular Systems</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="group bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="h-64 overflow-hidden relative">
+<div class="bg-cover bg-center w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="Macro close-up shot of hand-crafted custom scenery featuring weathered industrial rust, overgrown static grass, and artisanal hand-poured resin riverbeds." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAs9WxvqzR038Uh3ANpnkzL38U2JIeUQoY9xswku3rcz5z5NxOz-hjT0l3FLVVInH3KAPJp3kMHJi1Aot4XsPHmxR8ITxNDWDpfe56mTq85IqVzLwuslIb281dgHoBsd40fQBEHL4YHQ6x-YMLyoH2C4af8TrvJAq8O2BrapBDpuZTLewrfaU9yDJSyegqjf5-6TEkY0DAkYAFwjqfieVAYN9wT88ne5LjkX5DKHIv-Kx6syjWp3X_3yQ')"></div>
+<span class="absolute top-space-md left-space-md px-space-sm py-1 bg-surface/90 backdrop-blur-md rounded text-label-sm uppercase tracking-wider text-on-surface">Artisanal</span>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-space-sm">Custom Scenery</h3>
+<p class="text-body-sm text-on-surface-variant">Hand-sculpted topographies, custom-etched brass structures, weathered textures, and bespoke flora creation.</p>
+</div>
+<div class="mt-space-lg pt-space-md flex items-center text-label-md text-primary gap-space-xs group-hover:translate-x-1 transition-transform cursor-pointer">
+<span>Explore Scenery Work</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3 — OUR PROCESS -->
+<section class="py-24 bg-surface" id="process">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="text-center max-w-3xl mx-auto mb-space-xl">
+<span class="text-label-sm uppercase tracking-widest text-primary mb-space-xs block">The Journey</span>
+<h2 class="text-headline-lg font-headline-lg text-on-surface mb-space-md">Our Process</h2>
+<p class="text-body-md text-on-surface-variant">
+          Much like charting a transcontinental railway, every commission follows a meticulous six-stage itinerary from initial spark to maiden voyage.
+        </p>
+</div>
+<!-- Railway Timeline Track -->
+<div class="relative">
+<!-- Connecting Line for Desktop -->
+<div class="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-outline-variant -translate-y-1/2 z-0"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-space-lg relative z-10">
+<!-- Step 1 -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between shadow-sm">
+<div>
+<span class="text-label-sm font-label-md text-primary bg-primary-fixed px-space-sm py-1 rounded mb-space-md inline-block">01</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-space-sm">Consultation</h3>
+<p class="text-body-sm text-on-surface-variant">We discuss your available space, preferred era, budget, and operational aspirations.</p>
+</div>
+<div class="mt-space-lg pt-space-md border-t border-outline-variant/30 text-label-sm text-on-surface-variant flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 1-2 Hours
+            </div>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between shadow-sm">
+<div>
+<span class="text-label-sm font-label-md text-primary bg-primary-fixed px-space-sm py-1 rounded mb-space-md inline-block">02</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-space-sm">Concept &amp; Scale</h3>
+<p class="text-body-sm text-on-surface-variant">Selecting ideal scales (HO, OO, N, O) and drafting thematic narratives and track geometry.</p>
+</div>
+<div class="mt-space-lg pt-space-md border-t border-outline-variant/30 text-label-sm text-on-surface-variant flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[14px]">architecture</span> Blueprints
+            </div>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between shadow-sm">
+<div>
+<span class="text-label-sm font-label-md text-primary bg-primary-fixed px-space-sm py-1 rounded mb-space-md inline-block">03</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-space-sm">Layout Planning</h3>
+<p class="text-body-sm text-on-surface-variant">3D CAD routing, gradient calculations, staging yards, and structural benchwork design.</p>
+</div>
+<div class="mt-space-lg pt-space-md border-t border-outline-variant/30 text-label-sm text-on-surface-variant flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[14px]">view_in_ar</span> 3D Modeling
+            </div>
+</div>
+<!-- Step 4 -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between shadow-sm">
+<div>
+<span class="text-label-sm font-label-md text-primary bg-primary-fixed px-space-sm py-1 rounded mb-space-md inline-block">04</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-space-sm">Track &amp; Electrical</h3>
+<p class="text-body-sm text-on-surface-variant">Hand-laid or flex track installation, DCC bus wiring, decoders, and automated signaling.</p>
+</div>
+<div class="mt-space-lg pt-space-md border-t border-outline-variant/30 text-label-sm text-on-surface-variant flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[14px]">bolt</span> DCC Integration
+            </div>
+</div>
+<!-- Step 5 -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between shadow-sm">
+<div>
+<span class="text-label-sm font-label-md text-primary bg-primary-fixed px-space-sm py-1 rounded mb-space-md inline-block">05</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-space-sm">Scenery &amp; Structures</h3>
+<p class="text-body-sm text-on-surface-variant">Terrain sculpting, plaster shells, custom weathering, vegetation, and scratch-built buildings.</p>
+</div>
+<div class="mt-space-lg pt-space-md border-t border-outline-variant/30 text-label-sm text-on-surface-variant flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[14px]">landscape</span> Hand Sculpted
+            </div>
+</div>
+<!-- Step 6 -->
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col justify-between shadow-sm">
+<div>
+<span class="text-label-sm font-label-md text-primary bg-primary-fixed px-space-sm py-1 rounded mb-space-md inline-block">06</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-space-sm">Testing &amp; Install</h3>
+<p class="text-body-sm text-on-surface-variant">Rigorous rolling stock burn-in tests, fine-tuning, professional delivery, and white-glove setup.</p>
+</div>
+<div class="mt-space-lg pt-space-md border-t border-outline-variant/30 text-label-sm text-on-surface-variant flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span> White-Glove
+            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4 — PROJECT SHOWCASE -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl">
+<div>
+<span class="text-label-sm uppercase tracking-widest text-primary mb-space-xs block">Atelier Portfolio</span>
+<h2 class="text-headline-lg font-headline-lg text-on-surface">Project Showcase</h2>
+</div>
+<p class="text-body-md text-on-surface-variant max-w-md mt-space-sm md:mt-0">
+          Explore recent masterpieces crafted in our workshop for private collectors and institutions worldwide.
+        </p>
+</div>
+<div class="space-y-space-xl">
+<!-- Project 1 -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center bg-surface rounded-2xl p-space-lg lg:p-space-xl shadow-sm">
+<div class="lg:col-span-7 h-[400px] rounded-xl overflow-hidden">
+<div class="bg-cover bg-center w-full h-full hover:scale-105 transition-transform duration-700" data-alt="The Black Forest Pass HO scale layout showing a massive mountain timber trestle bridge crossing a glacial gorge with a detailed steam locomotive puffing realistic smoke." style="background-image: url('black_forest_pass.jpg')"></div>
+</div>
+<div class="lg:col-span-5 space-y-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-sm py-1 bg-surface-container text-on-surface text-label-sm rounded uppercase">HO Scale (1:87)</span>
+<span class="px-space-sm py-1 bg-primary-fixed text-on-primary-fixed text-label-sm rounded uppercase">Era III</span>
+</div>
+<h3 class="text-headline-lg font-headline-lg text-on-surface">The Black Forest Pass</h3>
+<div class="grid grid-cols-2 gap-space-md py-space-sm border-y border-outline-variant/30 text-body-sm">
+<div><span class="text-on-surface-variant block">Dimensions:</span> 14 ft × 8 ft L-Shape</div>
+<div><span class="text-on-surface-variant block">Theme:</span> Central European Alpine</div>
+</div>
+<p class="text-body-md text-on-surface-variant">
+              Featuring handcrafted pine forests, cascading glacial streams, a towering wooden trestle bridge, and dual-loop DCC automation with realistic block signaling.
+            </p>
+<div class="pt-space-sm">
+<a class="inline-flex items-center gap-space-xs text-label-md text-primary hover:text-primary-container" href="#">
+<span>View Project Gallery</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center bg-surface rounded-2xl p-space-lg lg:p-space-xl shadow-sm">
+<div class="lg:col-span-5 space-y-space-md order-2 lg:order-1">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-sm py-1 bg-surface-container text-on-surface text-label-sm rounded uppercase">N Scale (1:160)</span>
+<span class="px-space-sm py-1 bg-primary-fixed text-on-primary-fixed text-label-sm rounded uppercase">Era V</span>
+</div>
+<h3 class="text-headline-lg font-headline-lg text-on-surface">Metropolis Terminal</h3>
+<div class="grid grid-cols-2 gap-space-md py-space-sm border-y border-outline-variant/30 text-body-sm">
+<div><span class="text-on-surface-variant block">Dimensions:</span> 8 ft × 4 ft Island</div>
+<div><span class="text-on-surface-variant block">Theme:</span> Urban Commuter Hub</div>
+</div>
+<p class="text-body-md text-on-surface-variant">
+              An intricate multi-tier commuter railway weaving beneath illuminated skyscrapers, subway junctions, and a bustling central grand station with fiber-optic platform lighting.
+            </p>
+<div class="pt-space-sm">
+<a class="inline-flex items-center gap-space-xs text-label-md text-primary hover:text-primary-container" href="#">
+<span>View Project Gallery</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="lg:col-span-7 h-[400px] rounded-xl overflow-hidden order-1 lg:order-2">
+<div class="bg-cover bg-center w-full h-full hover:scale-105 transition-transform duration-700" data-alt="N scale urban metropolis layout at night featuring glowing skyscrapers, multi-level commuter trains passing over illuminated steel girder bridges, and realistic street lighting." style="background-image: url('urban_metropolis.jpg')"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5 — CRAFTSMANSHIP -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center mb-space-xl">
+<div class="lg:col-span-6 space-y-space-md">
+<span class="text-label-sm uppercase tracking-widest text-primary mb-space-xs block">Uncompromising Standards</span>
+<h2 class="text-headline-lg font-headline-lg text-on-surface">Every Detail Has a Story</h2>
+<p class="text-body-lg text-on-surface-variant">
+            True miniature realism is born from obsessive attention to detail. We combine traditional model-making arts with state-of-the-art electronics to bring static worlds to breathing, moving life.
+          </p>
+</div>
+<div class="lg:col-span-6 grid grid-cols-2 gap-space-md">
+<div class="h-64 rounded-xl overflow-hidden">
+<div class="bg-cover bg-center w-full h-full" data-alt="Macro photo of artisan hand-weathering a model steam locomotive chassis with rust pigments and oil washes." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDt_WTntA8eiAkXwmjKLD2T0wIZqwjPuJwfkekB68Y0BYik-yfXMO4ZgRYaCQWn2C0Cy2eGFSUHCgEx9fyzID30Yy1pvAbgB9vOpo_TUBJxcN4yWTk6YOWWLlpNx_Yj1wDrS0yH_tvzpW5_ogSgIFsK5i9-B_6APOznGQ5ART99tdwvNkSbKsP4PRxuOhxIWmYEfwIMDSWp4uFQJac0fReS-a_8ISAAIa4R-CSncbrPRC_Lnmbh5aHYDA')"></div>
+</div>
+<div class="h-64 rounded-xl overflow-hidden mt-space-xl">
+<div class="bg-cover bg-center w-full h-full" data-alt="Close-up of precise hand-soldered track work and electrical bus wiring beneath a custom layout baseboard." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD64g9SuyeI7RojYxsHs2puDeLi20IVhkpixHNs01xbe0ojdBDLjod8ZZV5yW-WApeUyMof9iB_5jFx6_KV7wEFXvs59IYUO4msOHwqsMbYAUeg5k0WtIgydxMS7rZGUeULEhaaqYqnf8_pYiUu64J6FObllocqsEpe1yo0RdISiAsVArUpbXzqV5gFi15QiXFvJQ5hkKuq1Z8Lb5aTaY4T4cauZ_-bB4oOUPLYcbGmK3LEtNZVItkV5g')"></div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg mt-space-xl">
+<div class="bg-surface-container-low p-space-lg rounded-xl">
+<span class="material-symbols-outlined text-primary text-[32px] mb-space-md">polyline</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-space-sm">Hand-Laid Track Work</h3>
+<p class="text-body-sm text-on-surface-variant">Micro-spike rail joinery, handmade turnouts, and ballasting scaled to perfection for flawless rolling stock tracking.</p>
+</div>
+<div class="bg-surface-container-low p-space-lg rounded-xl">
+<span class="material-symbols-outlined text-primary text-[32px] mb-space-md">forest</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-space-sm">Organic Scenery</h3>
+<p class="text-body-sm text-on-surface-variant">Custom static-grass layering, hand-twisted foliage trees, cast resin water features, and realistic geological strata.</p>
+</div>
+<div class="bg-surface-container-low p-space-lg rounded-xl">
+<span class="material-symbols-outlined text-primary text-[32px] mb-space-md">architecture</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-space-sm">Architectural Models</h3>
+<p class="text-body-sm text-on-surface-variant">Laser-cut and scratch-built structures featuring authentic brick texture, weathered roof tiling, and interior lighting.</p>
+</div>
+<div class="bg-surface-container-low p-space-lg rounded-xl">
+<span class="material-symbols-outlined text-primary text-[32px] mb-space-md">memory</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-space-sm">Advanced Wiring &amp; DCC</h3>
+<p class="text-body-sm text-on-surface-variant">Sound-equipped digital command control, wireless throttles, automated signal logic, and clean under-table harnesses.</p>
+</div>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container-low py-space-xl"><div class="max-w-7xl mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl mb-space-xl"><div class="space-y-space-md lg:col-span-1"><div class="flex items-center gap-space-sm"><img alt="Iron &amp; Gauge Atelier Logo" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3qEV6vnr8VlZfLl05S--QeurcSKvtHop_ZtVJgPxYmv9ODu_39fPUUwJBshP_ZH9wAVJpwVhXxXh2DrS0zOkC81LT0eOYEjP_t2UEHWgjnOs9Y7bs3I4fI2itfPBy5pTHQPh0x9GFBpqBwgjJtHpNBAcxrLDCuI34VpF9S1hlPszwLWubdLq5JKZujG4FnrT55sDw9o5LFLNB2HpIEYbZVq7LWIPKm3s4wcr5n258cyRLnMcc7NL_HA"/><span class="text-headline-sm font-headline-sm text-on-surface">Iron &amp; Gauge Atelier</span></div><p class="text-body-sm text-on-surface-variant">Building little worlds, one railway at a time.</p><p class="text-body-sm font-semibold text-on-surface">Small scale. Serious craftsmanship.</p></div><div class="space-y-space-md"><h4 class="text-label-md font-label-md uppercase text-on-surface tracking-wider">Explore</h4><ul class="space-y-space-xs text-body-sm text-on-surface-variant"><li><a class="hover:text-on-surface" href="#">Home 1 — The Collection</a></li><li><a class="hover:text-on-surface" data-path="home-2" href="#">Home 2 — The Workshop</a></li><li><a class="hover:text-on-surface" data-path="products" href="#">Products</a></li><li><a class="hover:text-on-surface" href="#">Custom Layout Building</a></li><li><a class="hover:text-on-surface" data-path="repairs" href="#">Repairs</a></li><li><a class="hover:text-on-surface" data-path="contact" href="#">Contact</a></li></ul></div><div class="space-y-space-md"><h4 class="text-label-md font-label-md uppercase text-on-surface tracking-wider">Specialist Services</h4><ul class="space-y-space-xs text-body-sm text-on-surface-variant"><li><span class="hover:text-on-surface">Model Trains &amp; Accessories</span></li><li><span class="hover:text-on-surface">Custom Layout Design</span></li><li><span class="hover:text-on-surface">Layout Construction</span></li><li><span class="hover:text-on-surface">Locomotive Repairs</span></li><li><span class="hover:text-on-surface">Maintenance &amp; Servicing</span></li></ul></div><div class="space-y-space-md"><h4 class="text-label-md font-label-md uppercase text-on-surface tracking-wider">Contact</h4><ul class="space-y-space-xs text-body-sm text-on-surface-variant"><li><strong>Visit:</strong> By appointment at our model railway workshop</li><li><strong>Email:</strong> hello@miniaturerailway.co.uk</li><li><strong>Phone:</strong> +44 20 7946 0182</li><li><strong>Hours:</strong> Mon–Sat, 9:00 AM–6:00 PM</li></ul></div><div class="space-y-space-md"><h4 class="text-label-md font-label-md uppercase text-on-surface tracking-wider">Enquiries</h4><p class="text-body-sm text-on-surface-variant">Looking for a particular locomotive, planning a layout, or need a repair? We’re happy to help.</p><a class="inline-flex items-center justify-center px-space-md py-2 bg-primary text-on-primary rounded-xl text-label-md hover:bg-primary-container hover:text-on-primary-container transition-colors" href="#">Make an Enquiry</a></div></div><div class="max-w-7xl mx-auto px-gutter pt-space-lg border-t border-outline-variant/30 flex flex-col sm:flex-row justify-between items-center text-body-sm text-on-surface-variant"><p>&copy; 2026 Iron &amp; Gauge Atelier. All rights reserved.</p><div class="flex gap-space-lg mt-space-sm sm:mt-0"><a class="hover:text-on-surface" href="#">Instagram</a> · <a class="hover:text-on-surface" href="#">Facebook</a> · <a class="hover:text-on-surface" href="#">YouTube</a></div></div></footer><div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-50 hidden flex items-center justify-center p-gutter" id="search-modal"><div class="bg-surface rounded-xl max-w-lg w-full p-space-lg shadow-xl relative"><button class="absolute top-space-md right-space-md text-on-surface-variant hover:text-on-surface" id="close-search"><span class="material-symbols-outlined">close</span></button><h3 class="text-headline-sm font-headline-sm text-on-surface mb-space-md">Search Atelier</h3><input class="w-full px-space-md py-space-sm bg-surface-container-low rounded-xl border border-outline-variant text-body-md text-on-surface focus:outline-none focus:border-primary" placeholder="Search locomotives, scales, accessories..." type="text"/></div></div><script>const themeToggle = document.getElementById('theme-toggle');const rtlToggle = document.getElementById('rtl-toggle');const searchBtn = document.getElementById('search-btn');const searchModal = document.getElementById('search-modal');const closeSearch = document.getElementById('close-search');searchBtn.addEventListener('click', () => { searchModal.classList.remove('hidden'); });closeSearch.addEventListener('click', () => { searchModal.classList.add('hidden'); });searchModal.addEventListener('click', (e) => { if (e.target === searchModal) searchModal.classList.add('hidden'); });</script>
+
+
+
+
+<script>
+  // Theme Toggle Logic
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  const htmlEl = document.documentElement;
+  
+  if (localStorage.getItem('theme') === 'dark') {
+    htmlEl.classList.add('dark');
+  }
+
+  if(themeToggleBtn) {
+      themeToggleBtn.addEventListener('click', () => {
+        htmlEl.classList.toggle('dark');
+        localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+      });
+  }
+
+  // Dropdown Logic
+  const homeBtn = document.getElementById('home-menu-btn');
+  const homeMenu = document.getElementById('home-menu');
+  if (homeBtn && homeMenu) {
+      homeBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          homeMenu.classList.toggle('hidden');
+      });
+      document.addEventListener('click', (e) => {
+          if (!homeBtn.contains(e.target) && !homeMenu.contains(e.target)) {
+              homeMenu.classList.add('hidden');
+          }
+      });
+  }
+
+  // Active Link Logic
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  const navLinks = document.querySelectorAll('nav a');
+  
+  // Handle Home Button Active State separately because it's a button opening a dropdown
+  if (currentPath === 'index.html' || currentPath === 'home2.html') {
+      const homeMenuBtn = document.getElementById('home-menu-btn');
+      if (homeMenuBtn) {
+          homeMenuBtn.classList.remove('text-on-surface-variant');
+          homeMenuBtn.classList.add('text-primary');
+      }
+  }
+
+  navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      // Some hrefs might be full URLs, but ours are relative like "products.html"
+      if (href === currentPath || (currentPath === '' && href === 'index.html')) {
+          link.classList.remove('text-on-surface-variant');
+          link.classList.add('text-primary', 'font-bold');
+          
+          // If it's inside the dropdown, also highlight it specifically
+          if (link.parentElement && link.parentElement.id === 'home-menu') {
+              link.classList.add('bg-surface-container');
+          }
+      }
+  });
+
+
+  // Persistent RTL Logic
+  const rtlBtn = document.getElementById('rtl-toggle');
+  if (localStorage.getItem('direction') === 'rtl') {
+    document.documentElement.setAttribute('dir', 'rtl');
+    if (rtlBtn) rtlBtn.textContent = 'LTR';
+  } else {
+    document.documentElement.setAttribute('dir', 'ltr');
+    if (rtlBtn) rtlBtn.textContent = 'RTL';
+  }
+
+  if (rtlBtn) {
+      rtlBtn.addEventListener('click', () => {
+          const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
+          const newDir = isRtl ? 'ltr' : 'rtl';
+          document.documentElement.setAttribute('dir', newDir);
+          rtlBtn.textContent = isRtl ? 'RTL' : 'LTR';
+          localStorage.setItem('direction', newDir);
+      });
+  }
+
+</script>
+</body>
+
+
+</html>

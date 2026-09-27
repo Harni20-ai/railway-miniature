@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}
+  /* Text vibrancy overrides */
+  html.dark .text-primary { color: #ffb2bc !important; }
+  html.dark .hover\:text-primary:hover { color: #ffd9dd !important; }
+  html.dark .text-secondary { color: #baeed9 !important; }
+  html.dark .hover\:text-secondary:hover { color: #ffffff !important; }
+
+  /* Tertiary / Brown Text vibrancy overrides */
+  html.dark .text-tertiary { color: #ffdea5 !important; }
+  html.dark .text-tertiary-container { color: #ffdea5 !important; }
+  html.dark .text-on-tertiary-container { color: #ffe6bd !important; }
+  html.dark .text-tertiary-fixed { color: #ffdea5 !important; }
+  html.dark .text-on-tertiary-fixed { color: #261900 !important; }
+  html.dark .bg-tertiary-fixed { background-color: #ffdea5 !important; }
+  html.dark .bg-tertiary-fixed-dim { background-color: #e9c176 !important; }
+
+  /* Secondary Fixed text visibility override */
+  html.dark .text-secondary-fixed { color: #ffffff !important; font-weight: 600 !important; }
+
+  /* Gradient overrides for Surface (Fixes white washout gap at bottom of hero images) */
+  html.dark .from-surface {
+      --tw-gradient-from: #121212 var(--tw-gradient-from-position) !important;
+      --tw-gradient-to: rgba(18, 18, 18, 0) var(--tw-gradient-to-position) !important;
+      --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+  }
+  html.dark .via-surface\/60 {
+      --tw-gradient-to: rgba(18, 18, 18, 0)  var(--tw-gradient-to-position) !important;
+      --tw-gradient-stops: var(--tw-gradient-from), rgba(18, 18, 18, 0.6) var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+  }
+
+  /* Fix contrast for text-primary when used inside bg-primary-fixed */
+  html.dark .bg-primary-fixed.text-primary,
+  html.dark .bg-primary-fixed .text-primary {
+      color: #400013 !important; 
+  }
+</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">  tailwind.config = {    darkMode: "class",    theme: {      extend: {        "colors": {          "on-secondary-container": "#3d6d5d",          "on-primary-fixed": "#400013",          "on-secondary": "#ffffff",          "on-primary-container": "#ee8495",          "primary-container": "#6b1d2f",          "on-error": "#ffffff",          "tertiary": "#322200",          "on-error-container": "#93000a",          "on-tertiary-fixed-variant": "#5d4201",          "surface-container": "#efeeeb",          "surface-container-highest": "#e4e2df",          "tertiary-container": "#4d3600",          "surface-container-low": "#f5f3f0",          "on-surface-variant": "#544244",          "on-secondary-fixed-variant": "#1d4f40",          "surface-bright": "#fbf9f6",          "error-container": "#ffdad6",          "on-tertiary": "#ffffff",          "secondary": "#376757",          "surface-container-high": "#eae8e5",          "surface": "#fbf9f6",          "inverse-on-surface": "#f2f0ed",          "primary-fixed-dim": "#ffb2bc",          "inverse-primary": "#ffb2bc",          "primary-fixed": "#ffd9dd",          "background": "#fbf9f6",          "secondary-fixed": "#baeed9",          "secondary-fixed-dim": "#9ed1bd",          "primary": "#4e051a",          "on-primary": "#ffffff",          "on-surface": "#1b1c1a",          "outline": "#877274",          "error": "#ba1a1a",          "on-primary-fixed-variant": "#7c2a3b",          "inverse-surface": "#30312f",          "on-tertiary-fixed": "#261900",          "surface-dim": "#dbdad7",          "on-secondary-fixed": "#002117",          "tertiary-fixed": "#ffdea5",          "surface-variant": "#e4e2df",          "on-tertiary-container": "#c39f58",          "outline-variant": "#dac0c2",          "surface-tint": "#9a4152",          "tertiary-fixed-dim": "#e9c176",          "surface-container-lowest": "#ffffff",          "secondary-container": "#baeed9",          "on-background": "#1b1c1a"        },        "borderRadius": {          "DEFAULT": "0.125rem",          "lg": "0.25rem",          "xl": "0.5rem",          "full": "0.75rem"        },        "spacing": {          "gutter": "1.5rem",          "space-md": "1rem",          "space-lg": "1.5rem",          "space-xl": "3rem",          "margin": "2rem",          "space-xs": "0.25rem",          "space-sm": "0.5rem"        },        "fontFamily": {          "body-sm": ["Inter"],          "label-md": ["Inter"],          "headline-xl": ["Playfair Display"],          "headline-md": ["Playfair Display"],          "label-sm": ["Inter"],          "headline-sm": ["Playfair Display"],          "headline-lg": ["Playfair Display"],          "body-md": ["Inter"],          "body-lg": ["Inter"]        },        "fontSize": {          "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }],          "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],          "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],          "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],          "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "500" }],          "headline-sm": ["22px", { "lineHeight": "28px", "fontWeight": "500" }],          "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600" }],          "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],          "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]        }      }    }  }</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Playfair+Display:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style id="dark-mode-overrides">
+  /* Dark mode overrides for semantic colors */
+  html.dark .bg-surface-container-lowest { background-color: #0a0a0a !important; }
+  html.dark .bg-surface { background-color: #121212 !important; }
+  html.dark .bg-surface-container-low { background-color: #1a1a1a !important; }
+  html.dark .bg-surface-container { background-color: #212121 !important; }
+  html.dark .bg-surface-container-high { background-color: #2b2b2b !important; }
+  html.dark .bg-surface-container-highest { background-color: #333333 !important; }
+  
+  html.dark .bg-background { background-color: #121212 !important; }
+  html.dark .text-on-background { color: #e3e3e3 !important; }
+
+  html.dark .text-on-surface { color: #e3e3e3 !important; }
+  html.dark .text-on-surface-variant { color: #c4c4c4 !important; }
+  html.dark .text-outline { color: #999999 !important; }
+  
+  html.dark .bg-outline { background-color: #737373 !important; }
+  html.dark .bg-outline-variant { background-color: #444444 !important; }
+  
+  html.dark .border-outline { border-color: #737373 !important; }
+  html.dark .border-outline-variant { border-color: #444444 !important; }
+  
+  /* Gradient overrides for Hero sections */
+  html.dark .from-background\/95 {
+      --tw-gradient-from: rgba(18, 18, 18, 0.95) var(--tw-gradient-from-position) !important;
+      --tw-gradient-to: rgba(18, 18, 18, 0) var(--tw-gradient-to-position) !important;
+      --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+  }
+  html.dark .via-background\/70 {
+      --tw-gradient-to: rgba(18, 18, 18, 0)  var(--tw-gradient-to-position) !important;
+      --tw-gradient-stops: var(--tw-gradient-from), rgba(18, 18, 18, 0.7) var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+  }
+
+  /* Opacity variations */
+  html.dark .bg-surface\/10 { background-color: rgba(18, 18, 18, 0.1) !important; }
+  html.dark .bg-surface\/80 { background-color: rgba(18, 18, 18, 0.8) !important; }
+  html.dark .bg-surface\/90 { background-color: rgba(18, 18, 18, 0.9) !important; }
+  html.dark .bg-surface-container-high\/80 { background-color: rgba(43, 43, 43, 0.8) !important; }
+  html.dark .bg-surface-container-high\/90 { background-color: rgba(43, 43, 43, 0.9) !important; }
+  html.dark .bg-surface-container\/20 { background-color: rgba(33, 33, 33, 0.2) !important; }
+
+  html.dark .border-outline-variant\/20 { border-color: rgba(68, 68, 68, 0.2) !important; }
+  html.dark .border-outline-variant\/30 { border-color: rgba(68, 68, 68, 0.3) !important; }
+  html.dark .border-outline-variant\/40 { border-color: rgba(68, 68, 68, 0.4) !important; }
+
+  /* Hover states */
+  html.dark .hover\:bg-surface-container-high:hover { background-color: #333333 !important; }
+  html.dark .hover\:text-on-surface:hover { color: #ffffff !important; }
+  html.dark .group:hover .group-hover\:text-on-surface { color: #ffffff !important; }
+  
+  /* Input fields */
+  html.dark input.bg-surface-container-low { background-color: #212121 !important; color: #ffffff !important; }
+  html.dark textarea.bg-surface-container-low { background-color: #212121 !important; color: #ffffff !important; }
+  html.dark select.bg-surface-container-low { background-color: #212121 !important; color: #ffffff !important; }
+</style>
+</head><body class="bg-surface font-body-md text-on-surface"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-7xl mx-auto px-gutter flex items-center justify-between"><div class="flex items-center gap-space-md"><img alt="Iron &amp; Gauge Atelier Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3qEV6vnr8VlZfLl05S--QeurcSKvtHop_ZtVJgPxYmv9ODu_39fPUUwJBshP_ZH9wAVJpwVhXxXh2DrS0zOkC81LT0eOYEjP_t2UEHWgjnOs9Y7bs3I4fI2itfPBy5pTHQPh0x9GFBpqBwgjJtHpNBAcxrLDCuI34VpF9S1hlPszwLWubdLq5JKZujG4FnrT55sDw9o5LFLNB2HpIEYbZVq7LWIPKm3s4wcr5n258cyRLnMcc7NL_HA"/><span class="text-headline-sm font-headline-sm tracking-tight text-on-surface">Iron &amp; Gauge Atelier</span></div><nav class="hidden lg:flex items-center gap-space-lg">
+<div class="relative flex items-center h-full">
+  <button id="home-menu-btn" class="transition-colors text-body-md text-on-surface-variant hover:text-on-surface flex items-center gap-1 font-bold py-4">Home <span class="material-symbols-outlined text-[16px]">expand_more</span></button>
+  <div id="home-menu" class="absolute left-0 top-full w-40 bg-surface shadow-lg rounded-lg overflow-hidden hidden z-50 border border-outline-variant">
+    <a href="index.html" class="block px-4 py-2 text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface cursor-pointer">Home 1</a>
+    <a href="home2.html" class="block px-4 py-2 text-body-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface cursor-pointer">Home 2</a>
+  </div>
+</div>
+<a class="text-body-md text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer" href="products.html">Products</a>
+<a class="text-body-md text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer" href="custom-layouts.html">Custom Layouts</a>
+<a class="text-body-md text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer" href="repairs.html">Repairs</a>
+<a class="text-body-md text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer" href="contact.html">Contact</a>
+</nav><div class="flex items-center gap-space-md"><button class="p-space-xs rounded-full hover:bg-surface-container-high hover:text-on-surface transition-colors text-on-surface-variant" id="search-btn"><span class="material-symbols-outlined text-[20px]">search</span></button><button class="relative p-space-xs rounded-full hover:bg-surface-container-high hover:text-on-surface transition-colors text-on-surface-variant" id="wishlist-btn"><span class="material-symbols-outlined text-[20px]">favorite</span><span class="absolute -top-1 -right-1 bg-primary text-on-primary text-label-sm w-4 h-4 rounded-full flex items-center justify-center">3</span></button><button class="relative p-space-xs rounded-full hover:bg-surface-container-high hover:text-on-surface transition-colors text-on-surface-variant" id="cart-btn"><span class="material-symbols-outlined text-[20px]">shopping_bag</span><span class="absolute -top-1 -right-1 bg-primary text-on-primary text-label-sm w-4 h-4 rounded-full flex items-center justify-center">2</span></button><button class="p-space-xs rounded-full hover:bg-surface-container-high hover:text-on-surface transition-colors text-on-surface-variant" id="theme-toggle"><span class="material-symbols-outlined text-[20px]">dark_mode</span></button><button class="px-space-xs py-1 rounded text-label-md bg-surface-container-high text-on-surface-variant hover:text-on-surface" id="rtl-toggle">RTL</button><a class="hidden sm:inline-flex items-center justify-center px-space-lg py-space-sm bg-primary text-on-primary rounded-xl text-label-md hover:bg-primary-container hover:text-on-primary-container transition-colors" data-path="custom-layouts" href="#">Build Your Layout</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+<!-- SECTION 1 — HERO -->
+<section class="relative bg-surface-container-low py-20 overflow-hidden">
+<div class="absolute inset-0 opacity-10 bg-gradient-to-br from-primary via-transparent to-secondary pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-gutter relative z-10 flex flex-col items-center text-center">
+<span class="text-label-sm font-label-sm text-primary uppercase tracking-widest mb-space-sm">Atelier Assistance</span>
+<h1 class="text-headline-xl font-headline-xl text-on-surface mb-space-md max-w-2xl">Let's Talk Trains</h1>
+<p class="text-body-lg text-on-surface-variant max-w-xl">Whether you need help choosing a model, planning a layout or repairing a favourite locomotive, our railway specialists are here to help.</p>
+</div>
+</section>
+<!-- SECTION 2 — CONTACT INFORMATION -->
+<section class="py-space-xl bg-surface">
+<div class="max-w-7xl mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+<div class="bg-surface-container rounded-xl p-space-lg shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[24px]">storefront</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-space-xs">Visit Our Store</h3>
+<p class="text-body-sm text-on-surface-variant">42 Conductor's Way, Heritage Quarter, London, EC1A 1BB</p>
+</div>
+</div>
+<div class="bg-surface-container rounded-xl p-space-lg shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[24px]">phone</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-space-xs">Call Us</h3>
+<p class="text-body-sm text-on-surface-variant">+44 (0) 20 7946 0912<br/>Mon-Sat: 9am - 6pm</p>
+</div>
+</div>
+<div class="bg-surface-container rounded-xl p-space-lg shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[24px]">mail</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-space-xs">Email Us</h3>
+<p class="text-body-sm text-on-surface-variant">atelier@ironandgauge.com<br/>support@ironandgauge.com</p>
+</div>
+</div>
+<div class="bg-surface-container rounded-xl p-space-lg shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[24px]">schedule</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-space-xs">Opening Hours</h3>
+<p class="text-body-sm text-on-surface-variant">Tuesday – Saturday: 10:00 – 18:00<br/>Sunday &amp; Monday: Closed</p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3 — ENQUIRY FORM -->
+<section class="py-space-xl bg-surface-container-low">
+<div class="max-w-4xl mx-auto px-gutter">
+<div class="bg-surface rounded-xl p-space-xl shadow-sm">
+<div class="mb-space-xl text-center">
+<h2 class="text-headline-lg font-headline-lg text-on-surface mb-space-xs">Send Us an Enquiry</h2>
+<p class="text-body-md text-on-surface-variant">Fill out the details below and our railway specialists will respond within 24 hours.</p>
+</div>
+<form class="grid grid-cols-1 sm:grid-cols-2 gap-space-lg">
+<div class="space-y-space-xs">
+<label class="text-label-md font-label-md text-on-surface">Your Name</label>
+<input class="w-full px-space-md py-space-sm bg-surface-container-low rounded-xl border border-outline-variant text-body-md text-on-surface focus:outline-none focus:border-primary" placeholder="Arthur Pendelton" type="text"/>
+</div>
+<div class="space-y-space-xs">
+<label class="text-label-md font-label-md text-on-surface">Email Address</label>
+<input class="w-full px-space-md py-space-sm bg-surface-container-low rounded-xl border border-outline-variant text-body-md text-on-surface focus:outline-none focus:border-primary" placeholder="arthur@railfans.co.uk" type="email"/>
+</div>
+<div class="space-y-space-xs">
+<label class="text-label-md font-label-md text-on-surface">Phone Number</label>
+<input class="w-full px-space-md py-space-sm bg-surface-container-low rounded-xl border border-outline-variant text-body-md text-on-surface focus:outline-none focus:border-primary" placeholder="+44 7700 900077" type="tel"/>
+</div>
+<div class="space-y-space-xs">
+<label class="text-label-md font-label-md text-on-surface">Enquiry Type</label>
+<select class="w-full px-space-md py-space-sm bg-surface-container-low rounded-xl border border-outline-variant text-body-md text-on-surface focus:outline-none focus:border-primary">
+<option>Product enquiry</option>
+<option>Custom layout</option>
+<option>Repair</option>
+<option>General enquiry</option>
+</select>
+</div>
+<div class="space-y-space-xs">
+<label class="text-label-md font-label-md text-on-surface">Scale</label>
+<select class="w-full px-space-md py-space-sm bg-surface-container-low rounded-xl border border-outline-variant text-body-md text-on-surface focus:outline-none focus:border-primary">
+<option>OO Scale (1:76.2)</option>
+<option>HO Scale (1:87)</option>
+<option>N Scale (1:148 / 1:160)</option>
+<option>O Scale (1:43.5)</option>
+<option>Other / Not Sure</option>
+</select>
+</div>
+<div class="space-y-space-xs">
+<label class="text-label-md font-label-md text-on-surface">Attachment (Optional)</label>
+<input class="w-full px-space-md py-2 bg-surface-container-low rounded-xl border border-outline-variant text-body-sm text-on-surface-variant file:mr-4 file:py-1 file:px-4 file:rounded-lg file:border-0 file:text-label-md file:bg-primary file:text-on-primary hover:file:bg-primary-container" type="file"/>
+</div>
+<div class="sm:col-span-2 space-y-space-xs">
+<label class="text-label-md font-label-md text-on-surface">Message</label>
+<textarea class="w-full px-space-md py-space-sm bg-surface-container-low rounded-xl border border-outline-variant text-body-md text-on-surface focus:outline-none focus:border-primary" placeholder="Tell us about your locomotive, layout specifications, or questions..." rows="4"></textarea>
+</div>
+<div class="sm:col-span-2 flex justify-end mt-space-md">
+<button class="px-space-xl py-3 bg-primary text-on-primary rounded-xl text-label-md hover:bg-primary-container transition-colors shadow-sm" type="submit">Send Enquiry</button>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- SECTION 4 — FIND OUR STORE -->
+<section class="py-space-xl bg-surface">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-xl items-center">
+<div class="space-y-space-md lg:col-span-1">
+<span class="text-label-sm font-label-sm text-primary uppercase tracking-wider">Location &amp; Access</span>
+<h2 class="text-headline-lg font-headline-lg text-on-surface">Find Our Store</h2>
+<p class="text-body-md text-on-surface-variant">Located in the heart of London's historic railway district, our atelier is easily accessible by public transit and offers private client parking in the rear.</p>
+<div class="pt-space-sm">
+<a class="inline-flex items-center gap-space-xs px-space-lg py-3 bg-secondary text-on-secondary rounded-xl text-label-md hover:bg-on-secondary-container transition-colors" href="https://maps.google.com" target="_blank">
+<span class="material-symbols-outlined text-[18px]">directions</span>
+              Get Directions
+            </a>
+</div>
+</div>
+<div class="lg:col-span-2 rounded-xl overflow-hidden shadow-sm h-96 relative">
+<div class="w-full h-full bg-cover bg-center" data-alt="An artistic stylized map view of central London highlighting the heritage quarter where Iron and Gauge Atelier is situated, featuring vintage map aesthetics with soft sepia and warm brass tones." data-location="London, UK" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCrQgIVCHfmQZ2PAULSOvx302rVtnKMfC6V2cDolDlT9_dvThbUALY4uA5FiplKnJRztCy7I8eL6pbnxVczCBAvkKu10vJulDW3ZawXoJFpxAsWgCkxBDTetQlAs_y-d5d5pbvITcww_iYWa6kKouvVQ2oAOLtG2LFabtF1IyENV-MGmRgM-hWYnIU-TzkLYlE1ar6FWnzNZud7YOtr35YFe5odSfe-AXoEVjdxuJFrF-wTPjIGPIsxJA')"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5 — VISIT THE WORKSHOP -->
+<section class="py-space-xl bg-surface-container-high">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="text-center max-w-2xl mx-auto mb-space-xl">
+<span class="text-label-sm font-label-sm text-primary uppercase tracking-wider">Inside The Atelier</span>
+<h2 class="text-headline-lg font-headline-lg text-on-surface mt-space-xs mb-space-sm">More Than a Shop — A Place for Railway Enthusiasts</h2>
+<p class="text-body-md text-on-surface-variant">Step behind the counter into our precision repair bench and curated display rooms where every scale tells a story.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<div class="rounded-xl overflow-hidden shadow-sm bg-surface flex flex-col">
+<div class="h-64 bg-cover bg-center" data-alt="A detailed workbench in a model railway atelier filled with miniature tools, magnifying lenses, brass components, and a partially disassembled steam locomotive under careful restoration." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDNYRd91uHQonh5s6Ri2kQX7UjeA7lWiVoSfjwhX1mLHH_-_NJlJoAKbwzpBU3YFYEjTgOLohmwswvAyBnbGsJsUVTWTSbh_jQX_dmvQG4wMZCIJATxi0q1vLqEMdpxtLYq_LIs7kkyyybpyP6pMy6yiIdTxVFOZ_Ew-1QBXoJ0xGFwlMORAsD34LPvO9H5QVghGUS1Cj_uAmecWCKjPXWGIZ2f4JTTsgJFM9d4lD_BMpzASIr2w6JGFg')"></div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-space-xs">The Repair Bench</h3>
+<p class="text-body-sm text-on-surface-variant">Master craftsmen tuning DCC decoders, cleaning intricate valve gear, and restoring vintage Hornby and Märklin models.</p>
+</div>
+</div>
+<div class="rounded-xl overflow-hidden shadow-sm bg-surface flex flex-col">
+<div class="h-64 bg-cover bg-center" data-alt="Warmly lit wooden shelves displaying meticulously boxed model trains, weathered freight wagons, and pristine scale passenger carriages in various gauges." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB9Yv5FuV25R_1vQMOgKHanlxtAMF4u9VZgUlvEQmvys7GmFjXQYu1LWSOAMoKhKcZb8jVBJL2B8SFTs4eJkInO2RbkXlfLrBezSbn83hcz-Uz6im-TDpBFVjCOrYuBEcqOLQ2urut0Ub4OxgVijBCZpNiJCcxqfCLzpeh-K2TINujRBxqZQSSIfhr5-kVt_AcUcCE0glWSdOukT3_nj8rm1WKV28iWJPGPRq_EvGMi247r9mCd10-XFA')"></div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-space-xs">Curated Collections</h3>
+<p class="text-body-sm text-on-surface-variant">Browse rare era-specific rolling stock, hand-painted scenic elements, and exclusive imported locomotive releases.</p>
+</div>
+</div>
+<div class="rounded-xl overflow-hidden shadow-sm bg-surface flex flex-col">
+<div class="h-64 bg-cover bg-center" data-alt="An expert staff member demonstrating a digital command control layout to an enthusiastic collector in a welcoming boutique environment filled with railway books and memorabilia." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCQleY0J9xcVOE7ueq3SOKzqg980CDi9-Em68gf9vhkD07_rPrab40eCPPlTe8RECL9x5wn_TNx8Zj9WxF8lOUfMWI2cmndVQpEhzUH17-f3XHeNDElv5Bg0qrzBZ-V-rTJeul3L3bijrdzmoZhXwUNzXRU7tFTt9DZMgzlKPUBkBhWep0QI-5y2LX2mkPJ0Xw6jqISDDETcQfo_J6TRO2B1i_PdPixsqZPR5aVDBjeqaQfHWsDksy3Dg')"></div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-space-xs">Expert Guidance</h3>
+<p class="text-body-sm text-on-surface-variant">Passionate specialists ready to share decades of hobby knowledge, layout advice, and technical troubleshooting.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container-low py-space-xl"><div class="max-w-7xl mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl mb-space-xl"><div class="space-y-space-md lg:col-span-1"><div class="flex items-center gap-space-sm"><img alt="Iron &amp; Gauge Atelier Logo" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3qEV6vnr8VlZfLl05S--QeurcSKvtHop_ZtVJgPxYmv9ODu_39fPUUwJBshP_ZH9wAVJpwVhXxXh2DrS0zOkC81LT0eOYEjP_t2UEHWgjnOs9Y7bs3I4fI2itfPBy5pTHQPh0x9GFBpqBwgjJtHpNBAcxrLDCuI34VpF9S1hlPszwLWubdLq5JKZujG4FnrT55sDw9o5LFLNB2HpIEYbZVq7LWIPKm3s4wcr5n258cyRLnMcc7NL_HA"/><span class="text-headline-sm font-headline-sm text-on-surface">Iron &amp; Gauge Atelier</span></div><p class="text-body-sm text-on-surface-variant">Building little worlds, one railway at a time.</p><p class="text-body-sm font-semibold text-on-surface">Small scale. Serious craftsmanship.</p></div><div class="space-y-space-md"><h4 class="text-label-md font-label-md uppercase text-on-surface tracking-wider">Explore</h4><ul class="space-y-space-xs text-body-sm text-on-surface-variant"><li><a class="hover:text-on-surface" href="#">Home 1 — The Collection</a></li><li><a class="hover:text-on-surface" data-path="home-2" href="#">Home 2 — The Workshop</a></li><li><a class="hover:text-on-surface" data-path="products" href="#">Products</a></li><li><a class="hover:text-on-surface" href="#">Custom Layout Building</a></li><li><a class="hover:text-on-surface" data-path="repairs" href="#">Repairs</a></li><li><a class="hover:text-on-surface" data-path="contact" href="#">Contact</a></li></ul></div><div class="space-y-space-md"><h4 class="text-label-md font-label-md uppercase text-on-surface tracking-wider">Specialist Services</h4><ul class="space-y-space-xs text-body-sm text-on-surface-variant"><li><span class="hover:text-on-surface">Model Trains &amp; Accessories</span></li><li><span class="hover:text-on-surface">Custom Layout Design</span></li><li><span class="hover:text-on-surface">Layout Construction</span></li><li><span class="hover:text-on-surface">Locomotive Repairs</span></li><li><span class="hover:text-on-surface">Maintenance &amp; Servicing</span></li></ul></div><div class="space-y-space-md"><h4 class="text-label-md font-label-md uppercase text-on-surface tracking-wider">Contact</h4><ul class="space-y-space-xs text-body-sm text-on-surface-variant"><li><strong>Visit:</strong> By appointment at our model railway workshop</li><li><strong>Email:</strong> hello@miniaturerailway.co.uk</li><li><strong>Phone:</strong> +44 20 7946 0182</li><li><strong>Hours:</strong> Mon–Sat, 9:00 AM–6:00 PM</li></ul></div><div class="space-y-space-md"><h4 class="text-label-md font-label-md uppercase text-on-surface tracking-wider">Enquiries</h4><p class="text-body-sm text-on-surface-variant">Looking for a particular locomotive, planning a layout, or need a repair? We’re happy to help.</p><a class="inline-flex items-center justify-center px-space-md py-2 bg-primary text-on-primary rounded-xl text-label-md hover:bg-primary-container hover:text-on-primary-container transition-colors" href="#">Make an Enquiry</a></div></div><div class="max-w-7xl mx-auto px-gutter pt-space-lg border-t border-outline-variant/30 flex flex-col sm:flex-row justify-between items-center text-body-sm text-on-surface-variant"><p>&copy; 2026 Iron &amp; Gauge Atelier. All rights reserved.</p><div class="flex gap-space-lg mt-space-sm sm:mt-0"><a class="hover:text-on-surface" href="#">Instagram</a> · <a class="hover:text-on-surface" href="#">Facebook</a> · <a class="hover:text-on-surface" href="#">YouTube</a></div></div></footer><div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-50 hidden flex items-center justify-center p-gutter" id="search-modal"><div class="bg-surface rounded-xl max-w-lg w-full p-space-lg shadow-xl relative"><button class="absolute top-space-md right-space-md text-on-surface-variant hover:text-on-surface" id="close-search"><span class="material-symbols-outlined">close</span></button><h3 class="text-headline-sm font-headline-sm text-on-surface mb-space-md">Search Atelier</h3><input class="w-full px-space-md py-space-sm bg-surface-container-low rounded-xl border border-outline-variant text-body-md text-on-surface focus:outline-none focus:border-primary" placeholder="Search locomotives, scales, accessories..." type="text"/></div></div><script>const themeToggle = document.getElementById('theme-toggle');const rtlToggle = document.getElementById('rtl-toggle');const searchBtn = document.getElementById('search-btn');const searchModal = document.getElementById('search-modal');const closeSearch = document.getElementById('close-search');searchBtn.addEventListener('click', () => { searchModal.classList.remove('hidden'); });closeSearch.addEventListener('click', () => { searchModal.classList.add('hidden'); });searchModal.addEventListener('click', (e) => { if (e.target === searchModal) searchModal.classList.add('hidden'); });</script>
+
+
+
+
+<script>
+  // Theme Toggle Logic
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  const htmlEl = document.documentElement;
+  
+  if (localStorage.getItem('theme') === 'dark') {
+    htmlEl.classList.add('dark');
+  }
+
+  if(themeToggleBtn) {
+      themeToggleBtn.addEventListener('click', () => {
+        htmlEl.classList.toggle('dark');
+        localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+      });
+  }
+
+  // Dropdown Logic
+  const homeBtn = document.getElementById('home-menu-btn');
+  const homeMenu = document.getElementById('home-menu');
+  if (homeBtn && homeMenu) {
+      homeBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          homeMenu.classList.toggle('hidden');
+      });
+      document.addEventListener('click', (e) => {
+          if (!homeBtn.contains(e.target) && !homeMenu.contains(e.target)) {
+              homeMenu.classList.add('hidden');
+          }
+      });
+  }
+
+  // Active Link Logic
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  const navLinks = document.querySelectorAll('nav a');
+  
+  // Handle Home Button Active State separately because it's a button opening a dropdown
+  if (currentPath === 'index.html' || currentPath === 'home2.html') {
+      const homeMenuBtn = document.getElementById('home-menu-btn');
+      if (homeMenuBtn) {
+          homeMenuBtn.classList.remove('text-on-surface-variant');
+          homeMenuBtn.classList.add('text-primary');
+      }
+  }
+
+  navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      // Some hrefs might be full URLs, but ours are relative like "products.html"
+      if (href === currentPath || (currentPath === '' && href === 'index.html')) {
+          link.classList.remove('text-on-surface-variant');
+          link.classList.add('text-primary', 'font-bold');
+          
+          // If it's inside the dropdown, also highlight it specifically
+          if (link.parentElement && link.parentElement.id === 'home-menu') {
+              link.classList.add('bg-surface-container');
+          }
+      }
+  });
+
+
+  // Persistent RTL Logic
+  const rtlBtn = document.getElementById('rtl-toggle');
+  if (localStorage.getItem('direction') === 'rtl') {
+    document.documentElement.setAttribute('dir', 'rtl');
+    if (rtlBtn) rtlBtn.textContent = 'LTR';
+  } else {
+    document.documentElement.setAttribute('dir', 'ltr');
+    if (rtlBtn) rtlBtn.textContent = 'RTL';
+  }
+
+  if (rtlBtn) {
+      rtlBtn.addEventListener('click', () => {
+          const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
+          const newDir = isRtl ? 'ltr' : 'rtl';
+          document.documentElement.setAttribute('dir', newDir);
+          rtlBtn.textContent = isRtl ? 'RTL' : 'LTR';
+          localStorage.setItem('direction', newDir);
+      });
+  }
+
+</script>
+</body>
+
+
+</html>
